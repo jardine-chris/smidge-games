@@ -5,9 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        "bright-orange": "#ea580c",
+      },
       fontFamily: {
-        "montserrat": ["Montserrat", "sans-serif"],
-        "lato": ["Lato", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
       },
     },
   },

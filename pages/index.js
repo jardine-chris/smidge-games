@@ -18,7 +18,7 @@ export default function Home() {
   }, [emblaApi]);
 
   return (
-    <div className="bg-zinc-900">
+    <div className="bg-black">
       <Navbar />
       <EmblaCarousel>
         <EmblaSlide

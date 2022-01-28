@@ -14,10 +14,10 @@ export const CardSection = () => {
 
   return (
     <div>
-      <h1 className="mb-4 text-2xl text-center text-white uppercase font-lato">
-        News
+      <h1 className="my-4 text-2xl text-center text-white uppercase md:my-8 md:text-5xl font-lato">
+        Latest News
       </h1>
-      <div className="grid grid-cols-1 px-2 pb-2 gap-y-6 sm:px-8 bg-zinc-900 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 px-2 pb-2 gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
         {data &&
           data.map((post) => (
             <Card

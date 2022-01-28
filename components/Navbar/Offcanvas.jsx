@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export const Offcanvas = ({ closeOffcanvas }) => {
@@ -12,7 +13,11 @@ export const Offcanvas = ({ closeOffcanvas }) => {
         </button>
         <h1 className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">Smidge Games</h1>
       </header>
-      hi
+      <body>
+          <Link href="/">
+          <a>Home</a></Link>
+          
+      </body>
     </div>
   );
 };

@@ -1,50 +1,97 @@
 import { Menu } from "@headlessui/react";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { MultilinkButton } from "./MultilinkButton";
 
 export const Offcanvas = ({ closeOffcanvas }) => {
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    setLinks([
+      {
+        link: { text: "Home", url: "/" },
+      },
+      {
+        multilink: {
+          text: "Games",
+          links: [
+            { text: "Fear Factory", url: "/games/fear-factory" },
+            { text: "Treasure Hunt", url: "/games/treasure-hunt" },
+            { text: "The Ensign", url: "/games/the-ensign" },
+          ],
+        },
+      },
+      {
+        multilink: {
+          text: "News",
+          links: [
+            { text: "Latest Posts", url: "/posts/latest-posts" },
+            { text: "Popular Posts", url: "/posts/popular-posts" },
+          ],
+        },
+      },
+      { link: { text: "About", url: "/about" } },
+      { link: { text: "Contact", url: "/contact" } },
+    ]);
+  }, []);
+
+  const menuItemStyle =
+    "py-4 tracking-wide uppercase cursor-pointer font-montserrat hover:bg-orange-600 transition duration-150";
+
   return (
-    <div className="fixed top-0 left-0 z-50 w-full h-screen overscroll-contain md:w-1/2 lg:w-2/5 xl:w-1/3 bg-zinc-900 overscroll-y-contain">
-      <header className="relative h-32 border-b border-zinc-800">
+    <div className="fixed top-0 left-0 z-50 w-full h-screen overscroll-contain md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/5 bg-grurp-800 overscroll-y-contain">
+      <header className="relative h-32 p-4 border-b border-grurp-900">
         <button
-          className="absolute p-2 rounded right-2 top-2 material-icons hover:bg-bright-orange"
+          className="absolute p-2 rounded right-2 top-2 material-icons hover:bg-orange-600"
           onClick={closeOffcanvas}
         >
           close
         </button>
-        <h1 className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-          Smidge Games
-        </h1>
+        <div className="absolute w-1/3 h-24 p-2 -translate-y-1/2 bg-black border-2 border-orange-600 rounded top-1/2">
+          <Image src="/images/smidge-games-logo/logo.png" layout="fill" objectFit="contain" />
+        </div>
       </header>
-      <Menu as="div" className="flex flex-col text-center">
-        <Menu.Item>
-          <a>Home</a>
-        </Menu.Item>
-        <Menu>
-          <Menu.Button>Games</Menu.Button>
-          <Menu.Items className="flex flex-col">
-            <Menu.Item>
-              <a>Fear Factory</a>
-            </Menu.Item>
-            <Menu.Item>
-              <a>Treasure Hunt</a>
-            </Menu.Item>
-            <Menu.Item>
-              <a>The Ensign</a>
-            </Menu.Item>
-          </Menu.Items>
-        </Menu>
-        <Menu>
-          <Menu.Button>News</Menu.Button>
-          <Menu.Items className="flex flex-col">
-            <Menu.Item>
-              <a>Latest Posts</a>
-            </Menu.Item>
-            <Menu.Item>
-              <a>Popular Posts</a>
-            </Menu.Item>
-          </Menu.Items>
-        </Menu>
+      <Menu
+        as="div"
+        className="grid grid-cols-1 text-center border-b divide-y divide-grurp-900 border-grurp-900"
+      >
+        {links &&
+          links.map((link) => {
+            const data = link.link || link.multilink;
+            if (!data.links) {
+              return (
+                <Link href={data.url}>
+                  <Menu.Item className={menuItemStyle} onClick={closeOffcanvas}>
+                    <a>{data.text}</a>
+                  </Menu.Item>
+                </Link>
+              );
+            }
+            return (
+              <Menu>
+                
+                <Menu.Button className={menuItemStyle}>
+                  <MultilinkButton text={data.text} />
+                </Menu.Button>
+                <Menu.Items className="grid grid-cols-1 text-center border divide-y divide-grurp-800 border-zinc-800 bg-grurp-900">
+                  {data.links &&
+                    data.links.map((multilink) => {
+                      return (
+                        <Link href={multilink.url}>
+                          <Menu.Item
+                            className={`${menuItemStyle}`}
+                            onClick={closeOffcanvas}
+                          >
+                            <a>{multilink.text}</a>
+                          </Menu.Item>
+                        </Link>
+                      );
+                    })}
+                </Menu.Items>
+              </Menu>
+            );
+          })}
       </Menu>
     </div>
   );

@@ -6,7 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "bright-orange": "#ea580c",
+        'grurp': {
+          100: "#9992b4",
+          200: "#867ea6",
+          300: "#736a98",
+          400: "#645b85",
+          500: "#544d71",
+          600: "#45405c",
+          700: "#363248",
+          800: "#272434",
+          900: "#181620",
+        }
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*:focus {
+  outline: 0;
+}
+
 .embla {
   position: relative;
   background-color: #f7f7f7;

@@ -8,25 +8,23 @@ export const Navbar = () => {
   const [offcanvas, setOffcanvas] = useState(false);
 
   function closeMenu() {
-    setOffcanvas(false)
+    setOffcanvas(false);
   }
 
   return (
-    <nav className="relative h-16 p-2 text-white bg-black font-montserrat">
+    <nav className="h-16 p-2 text-white bg-black font-montserrat">
       <div className="relative w-full h-full">
         {/* To find values for 'icon', see https://fonts.google.com/icons */}
-        <div className="absolute left-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-bright-orange">
-          <button
-            className="absolute text-3xl -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 material-icons"
-            onClick={() => setOffcanvas(true)}
-          >
+        <div
+          className="absolute left-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md cursor-pointer border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-bright-orange"
+          onClick={() => setOffcanvas(true)}
+        >
+          <button className="absolute text-3xl -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 material-icons">
             menu
           </button>
         </div>
         <div className="absolute right-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-bright-orange">
-          <button
-            className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons"
-          >
+          <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
             login
           </button>
         </div>

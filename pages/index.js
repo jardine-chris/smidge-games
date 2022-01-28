@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { Navbar } from "../components/Navbar/Navbar";
 
 import useEmblaCarousel from "embla-carousel-react";
 import EmblaCarousel from "../components/EmblaCarousel/EmblaCarousel";
 import { EmblaSlide } from "../components/EmblaCarousel/EmblaSlide";
-import { Card } from "../components/Card/Card";
 
 import { CardSection } from "../components/Card/CardSection";
 
@@ -19,7 +17,6 @@ export default function Home() {
 
   return (
     <div className="bg-black">
-      <Navbar />
       <EmblaCarousel>
         <EmblaSlide
           imgSrc="/images/games/fear-factory/images/01.jpg"

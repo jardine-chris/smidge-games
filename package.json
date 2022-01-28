@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "@material-ui/icons": "4.11.2",
     "axios": "^0.25.0",
     "embla-carousel-react": "^6.1.1",

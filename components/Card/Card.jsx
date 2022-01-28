@@ -6,8 +6,8 @@ export const Card = (props) => {
       <div className="container">
         <FeaturedImage url={props.featuredImageUrl} />
       </div>
-      <div className="px-6 py-8">
-        <h4 className="text-xs font-light text-orange-600 text- font-montserrat">
+      <div className="px-6 py-4">
+        <h4 className="text-xs font-light text-orange-600 md:text-base font-montserrat">
           {props.subtitle}
         </h4>
         <h3 className="text-xl font-bold tracking-wide text-white font-lato">

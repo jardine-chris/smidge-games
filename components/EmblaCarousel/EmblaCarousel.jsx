@@ -36,15 +36,15 @@ export const EmblaCarousel = (props) => {
     }, [embla, setScrollSnaps, onSelect]);
 
     return (
-        <>
-            <div className="bg-zinc-900 embla">
+        <div className="mb-4 bg-black border-b-4 border-bright-orange">
+            <div className="m-0 drop-shadow-lg">
                 <div className="embla__viewport" ref={viewportRef}>
                     <div className="embla__container">
                         {props.children}
                     </div>
                 </div>
             </div>
-            <div className="bg-zinc-900 embla__dots">
+            <div className="text-left embla__dots">
                 {scrollSnaps.map((_, index) => (
                     <DotButton
                         key={index}
@@ -53,7 +53,7 @@ export const EmblaCarousel = (props) => {
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

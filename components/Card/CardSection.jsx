@@ -21,6 +21,7 @@ export const CardSection = () => {
         {data &&
           data.map((post) => (
             <Card
+              key={post.id}
               featuredImageUrl={post._links["wp:featuredmedia"][0].href}
               title={post.title.rendered}
               subtitle={getDate(post)}

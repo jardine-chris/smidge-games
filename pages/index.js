@@ -45,7 +45,7 @@ export default function Home() {
           title="Treasure Hunt"
           content={
             <div>
-              <p>Ahoy, Matey! You've found treasure afloat!</p>
+              <p>Ahoy, Matey! You&apos;ve found treasure afloat!</p>
               <p>
                 Smash the treasures open with your cannonball to reveal the
                 treasures value!
@@ -66,7 +66,7 @@ export default function Home() {
               <p>
                 The Ensign is a game I have been working on since the summer of
                 2020. Here is one of the most recent level previews and the
-                first "Zero G" level in the game.
+                first &quot;Zero G&quot; level in the game.
               </p>
             </div>
           }

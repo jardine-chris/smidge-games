@@ -2,7 +2,7 @@ import { FeaturedImage } from "../FeaturedImage/FeaturedImage";
 
 export const Card = (props) => {
   return (
-    <article className="overflow-hidden rounded-lg shadow-xl bg-zinc-800 ring-1 ring-zinc-900/5">
+    <article className="overflow-hidden rounded-lg shadow-xl bg-zinc-800 ring-1 ring-zinc-900/5" key={props.id}>
       <div className="container">
         <FeaturedImage url={props.featuredImageUrl} />
       </div>

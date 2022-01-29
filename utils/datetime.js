@@ -19,7 +19,6 @@ export function getDate(post) {
   yesterday.setDate(yesterday.getDate() - 1);
 
   yesterday = yesterday.toLocaleString("en-us", dateOptions);
-  console.log("Post Date: " + date + "\n Yesterday: " + yesterday);
 
   if (date === today) {
     date = "Today";

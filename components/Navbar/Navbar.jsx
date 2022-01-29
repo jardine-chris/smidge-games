@@ -30,7 +30,7 @@ export const Navbar = () => {
         </div>
 
         <Link href="/">
-          <div className="absolute h-12 py-1 text-center transition duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 bg-orange-600 rounded-md cursor-pointer w-28 left-1/2 border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:border hover:border-orange-600">
+          <div className="absolute w-20 h-12 py-1 text-center transition duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 bg-orange-600 border border-orange-600 rounded-md cursor-pointer left-1/2 border-zinc-700 text-zinc-300 top-1/2 hover:bg-grurp-900">
             <div className="relative h-full">
               <Image src={smidgeBrand} layout="fill" objectFit="contain" />
             </div>

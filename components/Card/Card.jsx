@@ -5,7 +5,7 @@ export const Card = (props) => {
   return (
     <Link href={`/posts/${encodeURIComponent(props.id)}`}>
       <article
-        className="overflow-hidden rounded-lg shadow-xl cursor-pointer bg-zinc-800 ring-1 ring-zinc-800"
+        className="overflow-hidden rounded-lg shadow-xl cursor-pointer bg-grurp-900 ring-1 ring-grurp-700"
         key={props.id}
       >
         <div className="container">

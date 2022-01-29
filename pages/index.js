@@ -9,11 +9,11 @@ import { CardSection } from "../components/Card/CardSection";
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
-  useEffect(() => {
-    if (emblaApi) {
-      // Embla API is ready
-    }
-  }, [emblaApi]);
+  // useEffect(() => {
+  //   if (emblaApi) {
+  //     // Embla API is ready
+  //   }
+  // }, [emblaApi]);
 
   return (
     <div className="bg-black">

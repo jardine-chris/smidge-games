@@ -2,8 +2,10 @@ import React from "react";
 
 export const Categories = (props) => {
   return (
-    <div className="px-4 mt-4">
-      <h3 className="mb-1 text-sm font-light text-gray-500 font-montserrat">Tags</h3>
+    <div className="relative px-2 pt-6 pb-4 mx-2 my-8 border rounded border-grurp-700 bg-grurp-900">
+      <h3 className="absolute left-4 px-4 text-sm font-light text-white bg-orange-600 rounded -top-2.5 font-montserrat">
+        Categories
+      </h3>
       <div className="flex flex-wrap gap-2">{props.children}</div>
     </div>
   );

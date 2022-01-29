@@ -41,15 +41,21 @@ export const Offcanvas = ({ closeOffcanvas }) => {
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full h-screen overscroll-contain md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/5 bg-grurp-800 overscroll-y-contain">
-      <header className="relative h-32 p-4 border-b border-grurp-900">
+      <header className="relative h-32 border-b bg-grurp-700 border-grurp-900">
         <button
-          className="absolute p-2 rounded right-2 top-2 material-icons hover:bg-orange-600"
+          className="absolute p-2 -translate-y-1/2 rounded right-2 top-1/2 material-icons hover:bg-orange-600"
           onClick={closeOffcanvas}
         >
           close
         </button>
-        <div className="absolute w-1/3 h-24 p-2 -translate-y-1/2 bg-black border-2 border-orange-600 rounded top-1/2">
-          <Image src="/images/smidge-games-logo/logo.png" layout="fill" objectFit="contain" />
+        <div className="absolute w-1/3 h-24 -translate-x-1/2 -translate-y-1/2 rounded left-1/2 top-1/2">
+          <div className="relative h-full">
+            <Image
+              src="/images/smidge-games-logo/logo-brand.png"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
         </div>
       </header>
       <Menu
@@ -70,7 +76,6 @@ export const Offcanvas = ({ closeOffcanvas }) => {
             }
             return (
               <Menu>
-                
                 <Menu.Button className={menuItemStyle}>
                   <MultilinkButton text={data.text} />
                 </Menu.Button>

@@ -30,6 +30,7 @@ export const CardSection = () => {
                   dangerouslySetInnerHTML={{ __html: post.content.rendered }}
                 />
               }
+              id={post.id}
             />
           ))}
       </div>

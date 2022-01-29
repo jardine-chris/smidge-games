@@ -36,7 +36,7 @@ export const EmblaCarousel = (props) => {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-    <div className="mb-2 bg-black border-b border-zinc-800">
+    <div className="mb-2 bg-black border-b border-grurp-800">
       <div>
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">{props.children}</div>

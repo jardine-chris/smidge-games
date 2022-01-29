@@ -66,8 +66,9 @@ export const Offcanvas = ({ closeOffcanvas }) => {
           links.map((link) => {
             const data = link.link || link.multilink;
             if (!data.links) {
+              console.log(data);
               return (
-                <Link href={data.url}>
+                <Link key={link.text} href={data.url}>
                   <Menu.Item className={menuItemStyle} onClick={closeOffcanvas}>
                     <a>{data.text}</a>
                   </Menu.Item>
@@ -75,7 +76,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
               );
             }
             return (
-              <Menu>
+              <Menu key={data.text}>
                 <Menu.Button className={menuItemStyle}>
                   <MultilinkButton text={data.text} />
                 </Menu.Button>
@@ -83,7 +84,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
                   {data.links &&
                     data.links.map((multilink) => {
                       return (
-                        <Link href={multilink.url}>
+                        <Link key={multilink.text} href={multilink.url}>
                           <Menu.Item
                             className={`${menuItemStyle}`}
                             onClick={closeOffcanvas}

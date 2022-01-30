@@ -30,13 +30,13 @@ export const RoadmapCard = (props) => {
                 <li className="my-2">
                   <div className="relative flex">
                     <p
-                      className={`${
-                        status && status.color
-                      } p-1 material-icons`}
+                      className={`${status && status.color} p-1 material-icons`}
                     >
                       {status && status.icon}
                     </p>
-                    <p className="absolute text-sm -translate-y-1/2 left-8 top-1/2">{item.data}</p>
+                    <p className="absolute text-sm -translate-y-1/2 left-8 top-1/2">
+                      {item.data}
+                    </p>
                   </div>
                 </li>
               );

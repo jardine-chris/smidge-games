@@ -22,7 +22,8 @@
 }
 
 .carouselBg {
-  background: url("../../public/images/textures/creepy-texture.png");
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../public/images/textures/creepy-texture.png");
   background-size: cover;
   background-repeat: no-repeat;
 }

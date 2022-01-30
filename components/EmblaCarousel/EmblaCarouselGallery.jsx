@@ -25,7 +25,7 @@ export const EmblaCarouselGallery = () => {
   );
 
   const [viewportRef, embla] = useEmblaCarousel({
-    align: "start",
+    align: "center",
     skipSnaps: true,
     loop: true,
   });
@@ -47,18 +47,23 @@ export const EmblaCarouselGallery = () => {
   }, [embla, onSelect]);
 
   return (
-    <div className="py-8 bg-grurp-800/80 backdrop-blur-sm embla">
-      <h1 className="px-4 text-2xl tracking-wide text-white uppercase font-lato">
-        <span className="font-light">In-Game </span><span className="font-black text-orange-600 font-spooky">Screenshots</span>
+    <div className="py-8 bg-green-700/70 backdrop-blur-sm embla">
+      <h1 className="px-4 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
+        <span className="font-light">In-Game </span>
+        <span className="font-black text-orange-600 font-spooky">
+          Screenshots
+        </span>
       </h1>
-      <p className="px-4 font-light tracking-wide text-white font-montserrat">
-        <span className="font-normal text-orange-600 font-spooky">Get a glimpse</span>
+      <p className="px-4 font-light tracking-wide text-white font-montserrat xl:pl-64">
+        <span className="font-normal text-orange-600 font-spooky">
+          Get a glimpse
+        </span>
         <span className="text-gray-300"> of the game.</span>
       </p>
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
           {Object.keys(images).map((index) => (
-            <div className="relative p-6 ml-4 w-96 embla__slide" key={index}>
+            <div className="relative p-6 ml-4 embla__slide" key={index}>
               <div
                 className={`${styles.carouselImgContainer} embla__slide__inner w-96`}
               >

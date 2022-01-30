@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'grurp': {
+        grurp: {
           100: "#9992b4",
           200: "#867ea6",
           300: "#736a98",
@@ -16,11 +16,12 @@ module.exports = {
           700: "#363248",
           800: "#272434",
           900: "#181620",
-        }
+        },
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        spooky: ["Special Elite", "sans-serif"],
       },
     },
   },

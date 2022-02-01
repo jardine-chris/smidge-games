@@ -31,7 +31,7 @@ export const RoadmapCard = (props) => {
             {props.content.map((item) => {
               const status = getStatus(item.status);
               return (
-                <li className="my-2">
+                <li key={item.data} className="my-2">
                   <div className="relative flex">
                     <p
                       className={`${status && status.color} p-1 material-icons`}

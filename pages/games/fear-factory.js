@@ -13,9 +13,6 @@ import {
 
 import styles from "./fear-factory.module.scss";
 import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
-import { TwitterFeed } from "../../components/Twitter/TwitterFeed";
-import { EmblaCarousel } from "../../components/EmblaCarousel/EmblaCarousel";
-import { EmblaSlide } from "../../components/EmblaCarousel/EmblaSlide";
 
 export default function FearFactory({ tweets }) {
   function importAll(r) {

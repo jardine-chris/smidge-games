@@ -1,4 +1,5 @@
 import React from "react";
+import { MdPending, MdRotateLeft, MdCheckCircle } from "react-icons/md"
 
 import styles from "./RoadmapCard.module.scss";
 
@@ -6,11 +7,11 @@ export const RoadmapCard = (props) => {
   function getStatus(status) {
     switch (status) {
       case 0:
-        return { icon: "pending", color: "text-blue-600" };
+        return { icon: <MdPending />, color: "text-blue-600" };
       case 1:
-        return { icon: "rotate_left", color: "text-yellow-600" };
+        return { icon: <MdRotateLeft />, color: "text-yellow-600" };
       case 2:
-        return { icon: "check_circle", color: "text-green-600" };
+        return { icon: <MdCheckCircle />, color: "text-green-600" };
     }
   }
   return (

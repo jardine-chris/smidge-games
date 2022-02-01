@@ -2,10 +2,9 @@ import { useState } from "react";
 import { IconButton } from "./IconButton";
 import Link from "next/link";
 import Image from "next/image";
+import { MdMenu, MdLogin } from "react-icons/md"
 
-import styles from "./Navbar.module.scss";
 import { Offcanvas } from "./Offcanvas";
-import { Transition } from "@headlessui/react";
 
 import smidgeBrand from "../../public/images/smidge-games-logo/logo-brand.png";
 
@@ -25,7 +24,7 @@ export const Navbar = () => {
           onClick={() => setOffcanvas(true)}
         >
           <button className="absolute text-3xl -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 material-icons">
-            menu
+            <MdMenu />
           </button>
         </div>
 
@@ -39,7 +38,7 @@ export const Navbar = () => {
 
         <div className="absolute right-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600">
           <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
-            login
+            <MdLogin />
           </button>
         </div>
       </div>

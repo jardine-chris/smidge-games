@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md"
 
 export const MultilinkButton = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -6,7 +7,7 @@ export const MultilinkButton = (props) => {
     <div onClick={() => setIsExpanded(!isExpanded)}>
       {props.text}
       <span className="absolute material-icons">
-        {!isExpanded ? "keyboard_arrow_right" : "keyboard_arrow_down"}
+        {!isExpanded ? <MdKeyboardArrowLeft /> : <MdKeyboardArrowDown />}
       </span>
     </div>
   );

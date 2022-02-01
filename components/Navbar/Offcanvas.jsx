@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MultilinkButton } from "./MultilinkButton";
+import { MdClose } from "react-icons/md"
 
 export const Offcanvas = ({ closeOffcanvas }) => {
   const [links, setLinks] = useState([]);
@@ -46,7 +47,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
           className="absolute p-2 -translate-y-1/2 rounded right-2 top-1/2 material-icons hover:bg-orange-600"
           onClick={closeOffcanvas}
         >
-          close
+          <MdClose />
         </button>
         <div className="absolute w-1/3 h-24 -translate-x-1/2 -translate-y-1/2 rounded left-1/2 top-1/2">
           <div className="relative h-full">

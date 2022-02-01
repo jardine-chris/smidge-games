@@ -1,7 +1,7 @@
 import { Navbar } from "../components/Navbar/Navbar";
 import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Navbar />
@@ -9,5 +9,3 @@ function MyApp({ Component, pageProps }) {
     </div>
   );
 }
-
-export default MyApp;

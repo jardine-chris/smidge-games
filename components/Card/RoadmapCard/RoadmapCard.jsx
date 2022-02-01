@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./RoadmapCard.module.scss";
+
 export const RoadmapCard = (props) => {
   function getStatus(status) {
     switch (status) {
@@ -12,7 +14,9 @@ export const RoadmapCard = (props) => {
     }
   }
   return (
-    <div>
+    <div
+      className={`${styles.roadmapCardBgImg} ${props.bgPosition} mt-2 bg-orange-600 border-2 rounded border-orange-600`}
+    >
       <div className="my-4">
         <h1 className="text-3xl font-bold text-center text-orange-600 uppercase font-spooky">
           {props.title}

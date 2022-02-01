@@ -1,10 +1,14 @@
 export const EmblaSlide = (props) => {
-  const responsiveInner = "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3"
-  const responsiveImage = "xl:col-span-2"
+  const responsiveInner = "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3";
+  const responsiveImage = "xl:col-span-2";
   return (
     <div className="embla__slide">
       <div className="embla__slide__inner">
-        <img className="object-cover w-full" src={props.imgSrc} alt={props.imgAlt} />
+        <img
+          className="object-cover w-full"
+          src={props.imgSrc}
+          alt={props.imgAlt}
+        />
         <div className="px-6 pt-4 md:px-8">
           <h1 className="text-xl font-bold text-white font-lato">
             {props.title}

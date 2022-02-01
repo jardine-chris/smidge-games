@@ -35,10 +35,6 @@ export const EmblaCarousel = (props) => {
 
   return (
     <div className="">
-      {/* <Head>
-        <title>Fear Factory</title>
-        <link href="/styles/EmblaCarousel.module.scss" rel="stylesheet" />
-      </Head> */}
       <div>
         <div className="embla__viewport" ref={viewportRef}>
           <div className="embla__container">{props.children}</div>

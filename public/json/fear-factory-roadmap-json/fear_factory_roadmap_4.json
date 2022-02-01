@@ -1,0 +1,30 @@
+{
+  "stage": "Beta",
+  "date": "Summer 2022",
+  "data": [
+    {
+      "data": "Implementation of Early Access and player feedback",
+      "status": 0
+    },
+    {
+      "data": "Gameplay balancing and optimization",
+      "status": 0
+    },
+    {
+      "data": "Additional testing and player feedback",
+      "status": 0
+    },
+    {
+      "data": "Consider and implement requested props, locations, and FX",
+      "status": 0
+    },
+    {
+      "data": "Bugfixes",
+      "status": 0
+    },
+    {
+      "data": "Release!",
+      "status": 0
+    }
+  ]
+}

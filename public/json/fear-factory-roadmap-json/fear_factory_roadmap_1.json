@@ -1,0 +1,46 @@
+{
+  "stage": "Pre-Alpha",
+  "date": "Fall 2021",
+  "data": [
+    {
+      "data": "Implement core gameplay features and functionality",
+      "status": 1
+    },
+    {
+      "data": "Implement Early Access content",
+      "status": 2
+    },
+    {
+      "data": "10 scare attractions",
+      "status": 2
+    },
+    {
+      "data": "5 FX",
+      "status": 2
+    },
+    {
+      "data": "20 building pieces",
+      "status": 2
+    },
+    {
+      "data": "20 props",
+      "status": 2
+    },
+    {
+      "data": "1 save slot",
+      "status": 2
+    },
+    {
+      "data": "Implement Early Access levels",
+      "status": 2
+    },
+    {
+      "data": "Backyard Haunt",
+      "status": 2
+    },
+    {
+      "data": "The Forest",
+      "status": 2
+    }
+  ]
+}

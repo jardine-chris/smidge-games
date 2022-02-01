@@ -46,9 +46,9 @@ export const Post = (props) => {
   }, []);
 
   return (
-    <article className="">
+    <article className="bg-black xl:w-1/2 xl:m-auto">
       <header>
-        <h1 className="px-4 my-6 text-2xl text-white uppercase md:my-8 md:text-5xl font-lato">
+        <h1 className="px-4 py-6 text-2xl text-white uppercase md:my-8 md:text-5xl font-lato">
           {post && post.title.rendered}
         </h1>
         <Categories className="flex flex-wrap gap-2">

@@ -9,7 +9,7 @@ export const Card = (props) => {
         key={props.id}
       >
         <div className="container">
-          <FeaturedImage url={props.featuredImageUrl} />
+          <FeaturedImage url={props.featuredImageUrl && props.featuredImageUrl} />
         </div>
         <div className="px-6 py-4">
           <h4 className="text-xs font-light text-orange-600 md:text-base font-montserrat">

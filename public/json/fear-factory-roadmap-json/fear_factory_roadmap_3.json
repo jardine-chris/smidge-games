@@ -1,0 +1,42 @@
+{
+  "stage": "Alpha",
+  "date": "Spring 2022",
+  "data": [
+    {
+      "data": "All locations implemented (20+)",
+      "status": 0
+    },
+    {
+      "data": "All scare attractions implemented (50+)",
+      "status": 0
+    },
+    {
+      "data": "Progression/Upgrade/Technology system balancing",
+      "status": 0
+    },
+    {
+      "data": "All props and themes implemented (200+)",
+      "status": 0
+    },
+    {
+      "data": "All FX implemented (50+",
+      "status": 0
+    },
+    {
+      "data": "All building pieces implemented (200+)",
+      "status": 0
+    },
+    {
+      "data": "Additional optimization",
+      "status": 0
+    },
+    {
+      "data": "Review of previous player feedback and prioritization of requests and changes",
+      "status": 0
+    },
+    {
+      "data": "Campaign mode implemented",
+      "status": 0
+    }
+  ]
+}

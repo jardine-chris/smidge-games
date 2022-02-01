@@ -3,7 +3,6 @@ import { Card } from "./Card";
 import axios from "axios";
 import useSWR from "swr";
 import { getDate } from "../../utils/datetime";
-import { FeaturedImage } from "../FeaturedImage/FeaturedImage";
 
 export const CardSection = () => {
   const allPostsUrl = "https://api.smidgegames.com/wp-json/wp/v2/posts";

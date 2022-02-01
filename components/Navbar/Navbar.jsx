@@ -17,7 +17,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="h-16 p-2 text-white bg-black border-b-2 border-grurp-800 font-montserrat">
+    <nav className="sticky top-0 z-50 h-16 p-2 text-white bg-black border-b-2 border-grurp-800 font-montserrat">
       <div className="relative w-full h-full">
         {/* To find values for 'icon', see https://fonts.google.com/icons */}
         <div

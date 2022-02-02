@@ -2,7 +2,7 @@ import { Post } from "../../components/Post/Post"
 
 export default function SinglePost(props) {
   const { slug } = props;
-  return <Post slug={slug} />
+  return <div className="bg-black"><Post slug={slug} /></div>
 }
 
 export const getServerSideProps = async (context) => {

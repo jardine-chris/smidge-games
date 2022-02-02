@@ -3,7 +3,7 @@ import "../styles/globals.scss";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <div className="bg-black">
+    <div>
       <Navbar />
       <Component {...pageProps} />
     </div>

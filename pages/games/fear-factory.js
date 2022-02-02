@@ -202,7 +202,7 @@ export default function FearFactory({ tweets }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const user = await getUserByUsername("smidgeg");
   const userId = await user.id;
 

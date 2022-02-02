@@ -15,6 +15,7 @@ export default function Home() {
       <div className="border-b border-grurp-800">
         <EmblaCarousel>
           <EmblaSlide
+            responsive
             imgSrc="/images/games/fear-factory/hero/01.jpg"
             imgAlt="Photo from Fear Factory."
             title="Fear Factory"
@@ -38,6 +39,7 @@ export default function Home() {
             }
           />
           <EmblaSlide
+            responsive
             imgSrc="/images/games/treasure-hunt/loading-screens/18.jpg"
             imgAlt="Photo from Treasure Hunt."
             title="Treasure Hunt"
@@ -56,6 +58,7 @@ export default function Home() {
             }
           />
           <EmblaSlide
+            responsive
             imgSrc="/images/games/the-ensign/images/01.jpg"
             imgAlt="Photo from The Ensign."
             title="The Ensign"

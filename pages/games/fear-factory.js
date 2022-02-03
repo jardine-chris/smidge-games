@@ -208,7 +208,6 @@ export default function FearFactory({ tweets }) {
       <div className={`${styles.carouselBg} mt-16`}>
         <EmblaCarouselGallery />
       </div>
-      <div></div>
     </div>
   );
 }

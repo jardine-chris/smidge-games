@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import { VideoEmbed } from "../../components/VideoEmbed/VideoEmbed";
+import { EmblaCarousel } from "../../components/EmblaCarousel/EmblaCarousel";
 import { EmblaCarouselGallery } from "../../components/EmblaCarousel/EmblaCarouselGallery";
 
 import logoImg from "../../public/images/games/fear-factory/logo/logo-transparent.png";
@@ -13,6 +14,7 @@ import {
 
 import styles from "./fear-factory.module.scss";
 import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
+import { EmblaSlideCustom } from "../../components/EmblaCarousel/EmblaSlideCustom";
 
 export default function FearFactory({ tweets }) {
   function importAll(r) {
@@ -197,6 +199,15 @@ export default function FearFactory({ tweets }) {
       </section>
       <div className={`${styles.carouselBg} mt-16`}>
         <EmblaCarouselGallery />
+      </div>
+      <div>
+        <EmblaCarousel>
+          {tweets.map((tweet) => {
+            return <EmblaSlideCustom>
+              <div dangerouslySetInnerHTML={{ __html : tweet.html }}></div>
+            </EmblaSlideCustom>;
+          })}
+        </EmblaCarousel>
       </div>
     </div>
   );

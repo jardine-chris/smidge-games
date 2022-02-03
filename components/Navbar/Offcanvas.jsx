@@ -1,12 +1,13 @@
-import { Menu } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MultilinkButton } from "./MultilinkButton";
-import { MdClose } from "react-icons/md"
+import { MdClose } from "react-icons/md";
 
 export const Offcanvas = ({ closeOffcanvas }) => {
   const [links, setLinks] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setLinks([
@@ -81,21 +82,30 @@ export const Offcanvas = ({ closeOffcanvas }) => {
                 <Menu.Button className={menuItemStyle}>
                   <MultilinkButton text={data.text} />
                 </Menu.Button>
-                <Menu.Items className="grid grid-cols-1 text-center border divide-y divide-grurp-800 border-zinc-800 bg-grurp-900">
-                  {data.links &&
-                    data.links.map((multilink) => {
-                      return (
-                        <Link key={multilink.text} href={multilink.url}>
-                          <Menu.Item
-                            className={`${menuItemStyle}`}
-                            onClick={closeOffcanvas}
-                          >
-                            <a>{multilink.text}</a>
-                          </Menu.Item>
-                        </Link>
-                      );
-                    })}
-                </Menu.Items>
+                <Transition
+                  enter="transition duration-150 ease-out"
+                  enterFrom="transform scale-y-0"
+                  enterTo="transform scale-y-100"
+                  leave="transition duration-150 ease-out"
+                  leaveFrom="transform scale-y-100"
+                  leaveTo="transform scale-y-0"
+                >
+                  <Menu.Items className="grid grid-cols-1 text-center border divide-y divide-grurp-800 border-zinc-800 bg-grurp-900">
+                    {data.links &&
+                      data.links.map((multilink) => {
+                        return (
+                          <Link key={multilink.text} href={multilink.url}>
+                            <Menu.Item
+                              className={`${menuItemStyle}`}
+                              onClick={closeOffcanvas}
+                            >
+                              <a>{multilink.text}</a>
+                            </Menu.Item>
+                          </Link>
+                        );
+                      })}
+                  </Menu.Items>
+                </Transition>
               </Menu>
             );
           })}

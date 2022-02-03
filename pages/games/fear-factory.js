@@ -161,7 +161,7 @@ export default function FearFactory({ tweets }) {
         </div>
 
         {/* Stage car section. */}
-        <section className="grid items-start grid-cols-1 px-4 pt-12 bg-black gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-2 xl:grid-cols-4">
+        <section className="grid items-start grid-cols-1 px-4 pt-12 bg-black gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           <RoadmapCard
             title="Pre-Alpha"
             date="Fall 2021"

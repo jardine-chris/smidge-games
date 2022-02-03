@@ -14,7 +14,6 @@ export const EmblaCarousel = (props) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
-
   const scrollTo = useCallback(
     (index) => embla && embla.scrollTo(index),
     [embla]
@@ -23,7 +22,6 @@ export const EmblaCarousel = (props) => {
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-
   }, [embla, setSelectedIndex]);
 
   useEffect(() => {
@@ -37,7 +35,7 @@ export const EmblaCarousel = (props) => {
     <div className="">
       <div>
         <div className="embla__viewport" ref={viewportRef}>
-          <div className="embla__container">{props.children}</div>
+          <div className="relative w-full embla__container">{props.children}</div>
         </div>
       </div>
       {/* <div className="px-2 text-left embla__dots lg:py-4 lg:px-16"> */}

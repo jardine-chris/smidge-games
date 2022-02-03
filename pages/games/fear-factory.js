@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import { VideoEmbed } from "../../components/VideoEmbed/VideoEmbed";
+import { EmblaCarousel } from "../../components/EmblaCarousel/EmblaCarousel";
 import { EmblaCarouselGallery } from "../../components/EmblaCarousel/EmblaCarouselGallery";
 
 import logoImg from "../../public/images/games/fear-factory/logo/logo-transparent.png";
@@ -13,6 +14,7 @@ import {
 
 import styles from "./fear-factory.module.scss";
 import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
+import { EmblaSlideCustom } from "../../components/EmblaCarousel/EmblaSlideCustom";
 
 export default function FearFactory({ tweets }) {
   function importAll(r) {
@@ -124,11 +126,19 @@ export default function FearFactory({ tweets }) {
       <div>
         {/* Fixed background images. */}
         <div className={styles.bgImg} />
-
         {/* Fear Factory logo. */}
         <div className="relative w-2/3 py-8 mx-auto md:py-16 xl:w-1/4">
           <Image src={logoImg} />
         </div>
+        <EmblaCarousel>
+          {tweets.map((tweet) => {
+            return (
+              <EmblaSlideCustom>
+                <div dangerouslySetInnerHTML={{ __html: tweet.html }}></div>
+              </EmblaSlideCustom>
+            );
+          })}
+        </EmblaCarousel>
         {/* Trailer container. */}
         <div className="mx-2 mb-16 overflow-hidden border rounded-md border-grurp-600/70 bg-grurp-700/40 backdrop-blur-sm font-montserrat lg:w-1/2 lg:mx-auto">
           <div className="px-4 pt-4">
@@ -198,15 +208,16 @@ export default function FearFactory({ tweets }) {
       <div className={`${styles.carouselBg} mt-16`}>
         <EmblaCarouselGallery />
       </div>
+      <div></div>
     </div>
   );
 }
 
 export async function getServerSideProps() {
-  const user = await getUserByUsername("smidgeg");
-  const userId = await user.id;
+  // const user = await getUserByUsername("smidgeg");
+  // const userId = await user.id;
 
-  const tweets = await getAllUserTweets(userId);
+  const tweets = await getAllUserTweets();
 
   return {
     props: { tweets },

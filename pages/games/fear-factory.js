@@ -5,6 +5,9 @@ import { VideoEmbed } from "../../components/VideoEmbed/VideoEmbed";
 import { EmblaCarousel } from "../../components/EmblaCarousel/EmblaCarousel";
 import { EmblaCarouselGallery } from "../../components/EmblaCarousel/EmblaCarouselGallery";
 
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
 import logoImg from "../../public/images/games/fear-factory/logo/logo-transparent.png";
 
 import {

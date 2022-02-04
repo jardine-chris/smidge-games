@@ -60,6 +60,7 @@ export async function getAllUserTweets(userId) {
       params: {
         hide_media: true,
         url: `https://twitter.com/smidgeg/status/${tweet.id}`,
+        theme: "dark"
       },
     });
     const jsonRes = await response.data;

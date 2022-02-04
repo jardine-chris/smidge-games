@@ -12,6 +12,7 @@ export default function Home() {
 
   return (
     <div className="bg-black">
+      
       <div className="border-b border-grurp-800">
         <EmblaCarouselDots>
           <EmblaSlide

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { EmblaCarousel } from "../components/EmblaCarousel/EmblaCarousel";
+import { EmblaCarouselDots } from "../components/EmblaCarousel/EmblaCarouselDots";
 import { EmblaSlide } from "../components/EmblaCarousel/EmblaSlide";
 
 import { CardSection } from "../components/Card/CardSection";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="bg-black">
       <div className="border-b border-grurp-800">
-        <EmblaCarousel>
+        <EmblaCarouselDots>
           <EmblaSlide
             responsive
             imgSrc="/images/games/fear-factory/hero/01.jpg"
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
             }
           />
-        </EmblaCarousel>
+        </EmblaCarouselDots>
       </div>
 
       <CardSection />

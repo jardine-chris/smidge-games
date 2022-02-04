@@ -5,7 +5,7 @@ import Link from "next/link";
 import { DotButton } from "./EmblaCarouselButtons";
 import Head from "next/head";
 
-export const EmblaCarousel = (props) => {
+export const EmblaCarouselDots = (props) => {
   const [viewportRef, embla] = useEmblaCarousel({
     skipSnaps: false,
     loop: true,
@@ -38,7 +38,6 @@ export const EmblaCarousel = (props) => {
           <div className="relative w-full embla__container">{props.children}</div>
         </div>
       </div>
-      {/* <div className="px-2 text-left embla__dots lg:py-4 lg:px-16"> */}
       <div className="flex embla__dots">
         {scrollSnaps.map((_, index) => (
           <DotButton

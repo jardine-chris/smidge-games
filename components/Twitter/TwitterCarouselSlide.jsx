@@ -2,7 +2,7 @@ import { useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-export const EmblaSlideCustom = (props) => {
+export const TwitterCarouselSlide = (props) => {
   const [loading, setLoading] = useState(false);
   const responsiveInner = "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3";
   const responsiveImage = "xl:col-span-2";

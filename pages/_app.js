@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import Router from "next/router";
 import NProgress from "nprogress";
 import "../styles/nprogress.css";
+import { Footer } from "../components/Footer/Footer";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -13,6 +14,7 @@ export default function MyApp({ Component, pageProps }) {
     <div>
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </div>
   );
 }

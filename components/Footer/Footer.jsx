@@ -20,7 +20,7 @@ export const Footer = () => {
           </Link>
         </div>
         <div className="m-auto md:w-3/4 xl:w-1/2">
-          <div className="grid grid-cols-2 text-sm text-gray-400 font-montserrat">
+          <div className="grid grid-cols-1 text-sm text-gray-400 sm:grid-cols-2 font-montserrat">
             <div>
               <h3 className="font-bold text-white uppercase">Navigation</h3>
               <div className="grid grid-cols-2">
@@ -51,16 +51,16 @@ export const Footer = () => {
               </div>
             </div>
 
-            <div>
-              <h3 className="font-bold text-white uppercase">
+            <div className="w-full">
+              <h3 className="mt-4 font-bold text-white uppercase sm:mt-0">
                 Subscribe for Updates
               </h3>
               <form
-                className="flex mt-2 border border-grurp-600 max-w-[18rem]"
+                className="flex mt-2 border border-grurp-600 sm:max-w-[18rem]"
                 action="submit"
               >
                 <input
-                  className="p-2 border-r border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
+                  className="w-full p-2 border-r border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
                   type="text"
                   name="email"
                   id="email"

@@ -1,7 +1,7 @@
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
-  width: 100vw;
+  width: calc(100% - 8rem);
   height: 100vh;
 }
 

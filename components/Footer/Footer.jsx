@@ -51,7 +51,7 @@ export const Footer = () => {
               </div>
             </div>
 
-            <div className="w-full">
+            <div className="sm:justify-self-end">
               <h3 className="mt-4 font-bold text-white uppercase sm:mt-0">
                 Subscribe for Updates
               </h3>
@@ -60,7 +60,7 @@ export const Footer = () => {
                 action="submit"
               >
                 <input
-                  className="w-full p-2 border-r border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
+                  className="w-full p-2 border-r sm:w-64 sm:flex-end border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
                   type="text"
                   name="email"
                   id="email"

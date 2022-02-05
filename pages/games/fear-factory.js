@@ -46,11 +46,11 @@ export default function FearFactory({ tweets, roadmapData }) {
         {/* Fixed background images. */}
         <div className={styles.bgImg} />
         {/* Fear Factory logo. */}
-        <div className="relative w-2/3 py-8 mx-auto md:py-16 xl:w-1/4">
+        <div className="relative w-2/3 py-16 mx-auto md:py-16 xl:w-1/4">
           <Image src={logoImg} />
         </div>
         {/* Trailer container. */}
-        <div className="">
+        <div className="m-auto max-w-[52rem]">
           <VideoEmbed
             src="https://www.youtube.com/embed/m0Jcf3LmPRQ"
             title="Fear Factory Announcement Trailer"

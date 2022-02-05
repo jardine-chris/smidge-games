@@ -32,7 +32,7 @@ export const EmblaCarouselDots = (props) => {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-    <div className="">
+    <div>
       <div>
         <div className="embla__viewport" ref={viewportRef}>
           <div className="relative w-full embla__container">{props.children}</div>

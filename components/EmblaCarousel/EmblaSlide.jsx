@@ -9,7 +9,7 @@ export const EmblaSlide = (props) => {
           src={props.imgSrc}
           alt={props.imgAlt}
         />
-        <div className="px-6 pt-4 md:px-8">
+        <div className="px-2 pt-4 md:px-8">
           <h1 className="text-xl font-bold text-white font-lato">
             {props.title}
           </h1>

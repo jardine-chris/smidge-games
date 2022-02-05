@@ -60,7 +60,6 @@ export const DotButton = ({ selected, onClick }) => (
           border: 0;
           width: 100%;
           height: 50px;
-          margin: 0 0.25rem;
           display: flex;
           align-items: center;
 
@@ -77,6 +76,11 @@ export const DotButton = ({ selected, onClick }) => (
           height: 4px;
           border-radius: 2px;
           content: "";
+          transition: 0.15s ease-in-out;
+        }
+
+        .embla__dot:hover::after {
+          background-color: #A43E08;
         }
 
         .embla__dot.is-selected::after {

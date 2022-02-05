@@ -69,10 +69,10 @@ export default function FearFactory({ tweets, roadmapData }) {
             &bull; thrill
           </span>
         </div>
-        <p className="mt-2 text-center uppercase">
+        <p className="mt-2 text-lg text-center text-white uppercase xl:px-16">
           Bring the haunted attraction of your nightmares to life!
         </p>
-        <p className="mt-2">
+        <p className="mt-2 xl:px-16">
           Build and design elaborate attractions with incredible detail to scare
           your guests enough to leave before they can reach the exit, or risk
           losing fear reputation and cash.

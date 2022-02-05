@@ -32,13 +32,14 @@ export const EmblaCarouselDots = (props) => {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-    <div>
+    <div className="bg-zinc-800">
       <div>
-        <div className="embla__viewport" ref={viewportRef}>
+        <h1 className="pt-16 pb-8 pl-8 text-3xl text-left text-white font-lato">Games</h1>
+        <div className="pl-8 embla__viewport" ref={viewportRef}>
           <div className="relative w-full embla__container">{props.children}</div>
         </div>
       </div>
-      <div className="flex embla__dots">
+      <div className="flex my-8 embla__dots">
         {scrollSnaps.map((_, index) => (
           <DotButton
             key={index}
@@ -48,15 +49,6 @@ export const EmblaCarouselDots = (props) => {
         ))}
       </div>
       <style jsx>{`
-        .embla {
-          position: relative;
-          background-color: #f7f7f7;
-          padding: 0;
-          max-width: 670px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
         .embla__viewport {
           overflow: hidden;
           width: 100%;

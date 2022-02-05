@@ -11,7 +11,7 @@ export const TwitterCarouselSlide = (props) => {
     return (
       <SkeletonTheme baseColor="#544d71" highlightColor="#655f7f">
         <div className="flex items-center justify-center px-2">
-          <div className="w-full p-4 border bg-grurp-700/40 rounded-xl border-grurp-600/70 backdrop-blur-sm">
+          <div className="w-full p-4 border bg-zinc-700/40 rounded-xl border-zinc-600/70 backdrop-blur-sm">
             <div className="flex justify-between">
               <div className="flex items-center">
                 <Skeleton width="3.5rem" height="3.5rem" borderRadius="50%" />

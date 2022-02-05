@@ -42,8 +42,8 @@ export const Offcanvas = ({ closeOffcanvas }) => {
     "py-4 tracking-wide uppercase cursor-pointer font-montserrat hover:bg-orange-600 transition duration-150";
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-full h-screen overscroll-contain md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/5 bg-grurp-800 overscroll-y-contain">
-      <header className="relative h-32 border-b bg-grurp-700 border-grurp-900">
+    <div className="fixed top-0 left-0 z-50 w-full h-screen overscroll-contain md:w-1/2 lg:w-2/5 xl:w-1/3 2xl:w-1/5 bg-zinc-800 overscroll-y-contain">
+      <header className="relative h-32 border-b bg-zinc-700 border-zinc-900">
         <button
           className="absolute p-2 -translate-y-1/2 rounded right-2 top-1/2 material-icons hover:bg-orange-600"
           onClick={closeOffcanvas}
@@ -62,7 +62,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
       </header>
       <Menu
         as="div"
-        className="grid grid-cols-1 text-center border-b divide-y divide-grurp-900 border-grurp-900"
+        className="grid grid-cols-1 text-center border-b divide-y divide-zinc-900 border-zinc-900"
       >
         {links &&
           links.map((link) => {
@@ -90,7 +90,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
                   leaveFrom="transform scale-y-100"
                   leaveTo="transform scale-y-0"
                 >
-                  <Menu.Items className="grid grid-cols-1 text-center border divide-y divide-grurp-800 border-zinc-800 bg-grurp-900">
+                  <Menu.Items className="grid grid-cols-1 text-center border divide-y divide-zinc-800 border-zinc-800 bg-zinc-900">
                     {data.links &&
                       data.links.map((multilink) => {
                         return (

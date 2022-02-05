@@ -15,7 +15,7 @@ export const CardSection = () => {
     setIsFetching(true);
     axios(`https://api.smidgegames.com/wp-json/wp/v2/posts`, {
       params: {
-        per_page: 1,
+        per_page: 4,
         page: page,
       },
     }).then((res) => {
@@ -23,7 +23,7 @@ export const CardSection = () => {
       setTotalPages(res.headers["X-WP-TotalPages"]);
       setPostData([...postData, ...res.data]);
       setPage((prevPage) => prevPage + 1);
-      setHasMore(page <= totalPages);
+      setHasMore(page < totalPages);
 
       setIsFetching(false);
     });
@@ -34,11 +34,11 @@ export const CardSection = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="my-4 text-2xl text-center text-white uppercase md:my-8 md:text-5xl font-lato">
-        Latest News
+    <div className="main-container">
+      <h1 className="pt-16 pb-8 pl-8 text-3xl text-left text-white font-lato">
+        What's happening?
       </h1>
-      <div className="grid grid-cols-1 px-2 pb-2 gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 px-2 pb-2 gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 2xl:grid-cols-4">
         {postData &&
           postData.map((post) => (
             <Card
@@ -59,7 +59,7 @@ export const CardSection = () => {
         {isFetching && (
           <button
             disabled
-            className="w-full py-2 text-gray-400 rounded bg-grurp-700"
+            className="w-full py-2 text-gray-400 rounded bg-zinc-700"
           >
             <ImSpinner9 className="inline text-orange-600 animate-spin" />
           </button>
@@ -74,7 +74,33 @@ export const CardSection = () => {
             </button>
           </div>
         )}
+        {!isFetching && !hasMore && (
+          <div className="w-full py-2 italic text-center text-gray-600 text">
+            All posts loaded.
+          </div>
+        )}
       </div>
+      <style jsx>
+        {`
+          .main-container {
+            background: radial-gradient(
+              circle at -20% -20%,
+              #1e313b,
+              #1e303a,
+              #1c2d36,
+              #1a2931,
+              #18242b,
+              #151f24,
+              #12191d,
+              #0e1417,
+              #090d10,
+              #040608,
+              #010202,
+              #000000 45%
+            );
+          }
+        `}
+      </style>
     </div>
   );
 };

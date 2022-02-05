@@ -27,7 +27,7 @@ export default function FearFactory({ tweets, roadmapData }) {
   const alphaList = [];
   const betaList = [];
 
-  roadmapData.map(data => {
+  roadmapData.map((data) => {
     if (data.stage == "Pre-Alpha") {
       preAlphaList.push(data);
     } else if (data.stage == "Early Access") {
@@ -80,7 +80,19 @@ export default function FearFactory({ tweets, roadmapData }) {
       </section>
 
       <div>
-        <div className={`${styles.carouselBg} relative mt-16`}>
+        <div className={`${styles.carouselBg} bg-green-900/70 backdrop-blur-sm relative mt-16`}>
+          <h1 className="px-4 pt-8 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
+            <span className="font-light">In-Game </span>
+            <span className="font-black text-orange-600 font-spooky">
+              Screenshots
+            </span>
+          </h1>
+          <p className="px-4 font-light tracking-wide text-white font-montserrat xl:pl-64">
+            <span className="font-normal text-orange-600 font-spooky">
+              Get a glimpse
+            </span>
+            <span className="text-gray-300"> of the game.</span>
+          </p>
           <EmblaCarouselGallery />
         </div>
       </div>

@@ -10,10 +10,10 @@ export const TwitterCarouselSlide = (props) => {
   if (loading) {
     return (
       <SkeletonTheme baseColor="#544d71" highlightColor="#655f7f">
-        <div class="px-2 flex items-center justify-center">
-          <div class="bg-grurp-700/40 p-4 rounded-xl border-grurp-600/70 backdrop-blur-sm border w-full">
-            <div class="flex justify-between">
-              <div class="flex items-center">
+        <div className="flex items-center justify-center px-2">
+          <div className="w-full p-4 border bg-grurp-700/40 rounded-xl border-grurp-600/70 backdrop-blur-sm">
+            <div className="flex justify-between">
+              <div className="flex items-center">
                 <Skeleton width="3.5rem" height="3.5rem" borderRadius="50%" />
                 <div className="ml-1.5 w-32">
                   <span className="block">
@@ -32,11 +32,11 @@ export const TwitterCarouselSlide = (props) => {
             <p className="mt-3">
               <Skeleton count={2} />
             </p>
-            <p class="py-1 my-0.5">
+            <p className="py-1 my-0.5">
               <Skeleton width="12rem" />
             </p>
             <hr className="my-2 border-orange-600/70" />
-            <p class="mt-3">
+            <p className="mt-3">
               <Skeleton width="66%" />
             </p>
           </div>

@@ -1,5 +1,5 @@
 .bgImg {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("../../public/images/games/fear-factory/hero/03.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -16,9 +16,16 @@
   height: 64px;
 }
 
-.carouselBg {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../../public/images/textures/creepy-texture.png");
+.carouselBg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.02;
+  background: url("../../public/images/textures/creepy-texture.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }

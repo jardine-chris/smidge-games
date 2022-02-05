@@ -2,7 +2,7 @@ import React from "react";
 
 export const PrevButton = ({ enabled, onClick }) => (
   <button
-    className="absolute w-8 h-8 p-2 bg-orange-600 rounded-full cursor-pointer md:left-[25%] xl:left-1/3 bottom-2 embla__button"
+    className="w-16 h-16 cursor-pointer"
     onClick={onClick}
     disabled={!enabled}
   >
@@ -25,7 +25,7 @@ export const PrevButton = ({ enabled, onClick }) => (
 
 export const NextButton = ({ enabled, onClick }) => (
   <button
-    className="absolute w-8 h-8 p-2 bg-orange-600 rounded-full cursor-pointer md:right-[25%] xl:right-1/3 bottom-2 embla__button"
+    className="w-16 h-16 cursor-pointer"
     onClick={onClick}
     disabled={!enabled}
   >

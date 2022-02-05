@@ -47,19 +47,7 @@ export const EmblaCarouselGallery = () => {
   }, [embla, onSelect]);
 
   return (
-    <div className="py-8 bg-green-700/70 backdrop-blur-sm embla">
-      <h1 className="px-4 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
-        <span className="font-light">In-Game </span>
-        <span className="font-black text-orange-600 font-spooky">
-          Screenshots
-        </span>
-      </h1>
-      <p className="px-4 font-light tracking-wide text-white font-montserrat xl:pl-64">
-        <span className="font-normal text-orange-600 font-spooky">
-          Get a glimpse
-        </span>
-        <span className="text-gray-300"> of the game.</span>
-      </p>
+    <div className="embla">
       <div className="embla__viewport" ref={viewportRef}>
         <div className="embla__container">
           {Object.keys(images).map((index) => (
@@ -78,10 +66,10 @@ export const EmblaCarouselGallery = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="invisible lg:visible">
-        <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-        <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        <div className="absolute flex justify-between invisible w-screen px-16 -translate-y-1/2 top-1/2 lg:visible">
+          <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+        </div>
       </div>
       <style jsx>{`
         .embla {

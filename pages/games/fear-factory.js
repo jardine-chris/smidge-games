@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import useSWR from "swr";
 
 import { VideoEmbed } from "../../components/VideoEmbed/VideoEmbed";
+import { EmblaCarouselDots } from "../../components/EmblaCarousel/EmblaCarouselDots";
 import { EmblaCarouselGallery } from "../../components/EmblaCarousel/EmblaCarouselGallery";
+
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import logoImg from "../../public/images/games/fear-factory/logo/logo-transparent.png";
 
@@ -13,141 +18,87 @@ import {
 
 import styles from "./fear-factory.module.scss";
 import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
+import { TwitterCarouselSlide } from "../../components/Twitter/TwitterCarouselSlide";
+import axios from "axios";
 
-export default function FearFactory({ tweets }) {
-  function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) => {
-      images[
-        item.replace("../../public/images/games/fear-factory/in-game", "")
-      ] = r(item);
-    });
-    return images;
-  }
+export default function FearFactory({ tweets, roadmapData }) {
+  const preAlphaList = [];
+  const earlyAccessList = [];
+  const alphaList = [];
+  const betaList = [];
 
-  const images = importAll(
-    require.context(
-      "../../public/images/games/fear-factory/in-game",
-      false,
-      /\.(png|jpe?g|svg)$/
-    )
-  );
-
-  const Status = {
-    NotStarted: 0,
-    InProgress: 1,
-    Complete: 2,
-  };
-
-  const preAlphaList = [
-    {
-      data: "Implement core gameplay features and functionality",
-      status: Status.InProgress,
-    },
-    { data: "Implement Early Access content", status: Status.Complete },
-    { data: "10 scare attractions", status: Status.Complete },
-    { data: "5 FX", status: Status.Complete },
-    { data: "20 building pieces", status: Status.Complete },
-    { data: "20 props", status: Status.Complete },
-    { data: "1 save slot", status: Status.Complete },
-    { data: "Implement Early Access levels", status: Status.Complete },
-    { data: "Backyard Haunt", status: Status.Complete },
-    { data: "The Forest", status: Status.Complete },
-  ];
-
-  const earlyAccessList = [
-    {
-      data: "New locations (Abandoned Factory & Old Schoolhouse",
-      status: Status.NotStarted,
-    },
-    { data: "New scare attractions (20+)", status: Status.NotStarted },
-    { data: "Progression system", status: Status.NotStarted },
-    { data: "New props and themes (50+)", status: Status.NotStarted },
-    { data: "New FX (10+)", status: Status.NotStarted },
-    { data: "Building pieces (50+)", status: Status.NotStarted },
-    { data: "Optimizations", status: Status.NotStarted },
-    { data: "Technology system", status: Status.NotStarted },
-    { data: "Upgrade system", status: Status.NotStarted },
-    { data: "Player tutorial", status: Status.NotStarted },
-    { data: "Multiple save slots", status: Status.NotStarted },
-    { data: "Early access Steam launch", status: Status.NotStarted },
-  ];
-
-  const alphaList = [
-    { data: "All locations implemented (20+)", status: Status.NotStarted },
-    {
-      data: "All scare attractions implemented (50+)",
-      status: Status.NotStarted,
-    },
-    {
-      data: "Progression/Upgrade/Technology system balancing",
-      status: Status.NotStarted,
-    },
-    {
-      data: "All props and themes implemented (200+)",
-      status: Status.NotStarted,
-    },
-    { data: "All FX implemented (50+", status: Status.NotStarted },
-    {
-      data: "All building pieces implemented (200+)",
-      status: Status.NotStarted,
-    },
-    { data: "Additional optimization", status: Status.NotStarted },
-    {
-      data: "Review of previous player feedback and prioritization of requests and changes",
-      status: Status.NotStarted,
-    },
-    { data: "Campaign mode implemented", status: Status.NotStarted },
-  ];
-
-  const betaList = [
-    {
-      data: "Implementation of Early Access and player feedback",
-      status: Status.NotStarted,
-    },
-    { data: "Gameplay balancing and optimization", status: Status.NotStarted },
-    {
-      data: "Additional testing and player feedback",
-      status: Status.NotStarted,
-    },
-    {
-      data: "Consider and implement requested props, locations, and FX",
-      status: Status.NotStarted,
-    },
-    { data: "Bugfixes", status: Status.NotStarted },
-    { data: "Release!", status: Status.NotStarted },
-  ];
+  roadmapData.map((data) => {
+    if (data.stage == "Pre-Alpha") {
+      preAlphaList.push(data);
+    } else if (data.stage == "Early Access") {
+      earlyAccessList.push(data);
+    } else if (data.stage == "Alpha") {
+      alphaList.push(data);
+    } else if (data.stage == "Beta") {
+      betaList.push(data);
+    }
+  });
 
   return (
-    <div>
-      {/* <div className="bg-gradient-to-b from-transparent to-black"> */}
-      <div>
-        {/* Fixed background images. */}
-        <div className={styles.bgImg} />
-
+    <section className="mb-16">
+      {/* Fixed background images. */}
+      <div className={styles.bgImg} />
+      <section>
         {/* Fear Factory logo. */}
-        <div className="relative w-2/3 py-8 mx-auto md:py-16 xl:w-1/4">
+        <article className="relative w-2/3 py-16 mx-auto md:py-16 xl:w-1/4">
           <Image src={logoImg} />
-        </div>
+        </article>
         {/* Trailer container. */}
-        <div className="mx-2 mb-16 overflow-hidden border rounded-md border-grurp-600/70 bg-grurp-700/40 backdrop-blur-sm font-montserrat lg:w-1/2 lg:mx-auto">
-          <div className="px-4 pt-4">
-            <h1 className="text-sm uppercase text-grurp-100">
-              Watch the Teaser
-            </h1>
-            <hr className="my-2 border-orange-600/70" />
-          </div>
-          <div className="mt-4 border-t border-grurp-600">
-            <VideoEmbed
-              src="https://www.youtube.com/embed/m0Jcf3LmPRQ"
-              title="Fear Factory Announcement Trailer"
-            />
-          </div>
+        <article className="m-auto max-w-[52rem]">
+          <VideoEmbed
+            src="https://www.youtube.com/embed/m0Jcf3LmPRQ"
+            title="Fear Factory Announcement Trailer"
+          />
+        </article>
+      </section>
+
+      <section className="px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-grurp-600/70 font-montserrat bg-grurp-700/30 backdrop-blur-md">
+        <div className="text-center">
+          <span className="text-4xl text-red-700 font-spooky">
+            scare &bull;
+          </span>{" "}
+          <span className="text-5xl text-red-600 uppercase font-spooky">
+            terrify
+          </span>{" "}
+          <span className="text-3xl text-red-700 font-spooky">
+            &bull; thrill
+          </span>
+        </div>
+        <p className="mt-2 text-lg text-center text-white uppercase xl:px-16">
+          Bring the haunted attraction of your nightmares to life!
+        </p>
+        <p className="mt-2 xl:px-16">
+          Build and design elaborate attractions with incredible detail to scare
+          your guests enough to leave before they can reach the exit, or risk
+          losing fear reputation and cash.
+        </p>
+      </section>
+
+      <div>
+        <div className={`${styles.carouselBg} bg-green-900/70 backdrop-blur-sm relative mt-16`}>
+          <h1 className="px-4 pt-8 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
+            <span className="font-light">In-Game </span>
+            <span className="font-black text-orange-600 font-spooky">
+              Screenshots
+            </span>
+          </h1>
+          <p className="px-4 font-light tracking-wide text-white font-montserrat xl:pl-64">
+            <span className="font-normal text-orange-600 font-spooky">
+              Get a glimpse
+            </span>
+            <span className="text-gray-300"> of the game.</span>
+          </p>
+          <EmblaCarouselGallery />
         </div>
       </div>
 
       {/* Early access roadmap container. */}
-      <section>
+      <section className="mt-16">
         {/* Header with background svg. */}
         <div className="relative">
           <img
@@ -195,20 +146,22 @@ export default function FearFactory({ tweets }) {
           />
         </div>
       </section>
-      <div className={`${styles.carouselBg} mt-16`}>
-        <EmblaCarouselGallery />
-      </div>
-    </div>
+    </section>
   );
 }
 
 export async function getServerSideProps() {
-  const user = await getUserByUsername("smidgeg");
-  const userId = await user.id;
+  // const user = await getUserByUsername("smidgeg");
+  // const userId = await user.id;
 
-  const tweets = await getAllUserTweets(userId);
+  // const tweets = await getAllUserTweets();
+
+  const roadmapDataUrl =
+    "https://api.smidgegames.com/wp-json/mo/v1/fear-factory-roadmap";
+  const getRoadmap = await axios.get(roadmapDataUrl);
+  const data = await getRoadmap.data;
 
   return {
-    props: { tweets },
+    props: { roadmapData: data },
   };
 }

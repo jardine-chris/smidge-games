@@ -6,7 +6,7 @@ export const MultilinkButton = (props) => {
   return (
     <div className="relative" onClick={() => setIsExpanded(!isExpanded)}>
       {props.text}
-      <div className="absolute left-4 material-icons">
+      <div className="absolute right-4 material-icons">
         {!isExpanded ? <MdKeyboardArrowRight /> : <MdKeyboardArrowDown />}
       </div>
     </div>

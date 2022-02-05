@@ -5,11 +5,13 @@ export const Card = (props) => {
   return (
     <Link href={`/posts/${encodeURIComponent(props.id)}`}>
       <article
-        className="overflow-hidden rounded-lg shadow-xl cursor-pointer bg-grurp-900 ring-1 ring-grurp-700"
+        className="overflow-hidden transition duration-150 rounded-lg shadow-xl cursor-pointer bg-grurp-900 hover:bg-grurp-800 ring-1 ring-grurp-700"
         key={props.id}
       >
         <div className="container">
-          <FeaturedImage url={props.featuredImageUrl && props.featuredImageUrl} />
+          <FeaturedImage
+            url={props.featuredImageUrl && props.featuredImageUrl}
+          />
         </div>
         <div className="px-6 py-4">
           <h4 className="text-xs font-light text-orange-600 md:text-base font-montserrat">

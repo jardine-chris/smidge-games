@@ -6,11 +6,11 @@ import styles from "./RoadmapCard.module.scss";
 export const RoadmapCard = (props) => {
   function getStatus(status) {
     switch (status) {
-      case 0:
+      case "Not Started":
         return { icon: <MdPending />, color: "text-blue-600" };
-      case 1:
+      case "In Progress":
         return { icon: <MdRotateLeft />, color: "text-yellow-600" };
-      case 2:
+      case "Complete":
         return { icon: <MdCheckCircle />, color: "text-green-600" };
     }
   }
@@ -40,7 +40,7 @@ export const RoadmapCard = (props) => {
                       {status && status.icon}
                     </p>
                     <p className="absolute text-sm -translate-y-1/2 left-8 top-1/2">
-                      {item.data}
+                      {item.description}
                     </p>
                   </div>
                 </li>

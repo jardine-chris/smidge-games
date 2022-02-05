@@ -5,7 +5,7 @@ import Link from "next/link";
 import { DotButton } from "./EmblaCarouselButtons";
 import Head from "next/head";
 
-export const EmblaCarousel = (props) => {
+export const EmblaCarouselDots = (props) => {
   const [viewportRef, embla] = useEmblaCarousel({
     skipSnaps: false,
     loop: true,
@@ -13,7 +13,6 @@ export const EmblaCarousel = (props) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
-
 
   const scrollTo = useCallback(
     (index) => embla && embla.scrollTo(index),
@@ -23,7 +22,6 @@ export const EmblaCarousel = (props) => {
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-
   }, [embla, setSelectedIndex]);
 
   useEffect(() => {
@@ -34,13 +32,12 @@ export const EmblaCarousel = (props) => {
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
-    <div className="">
+    <div>
       <div>
         <div className="embla__viewport" ref={viewportRef}>
-          <div className="embla__container">{props.children}</div>
+          <div className="relative w-full embla__container">{props.children}</div>
         </div>
       </div>
-      {/* <div className="px-2 text-left embla__dots lg:py-4 lg:px-16"> */}
       <div className="flex embla__dots">
         {scrollSnaps.map((_, index) => (
           <DotButton

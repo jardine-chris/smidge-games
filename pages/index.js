@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { EmblaCarousel } from "../components/EmblaCarousel/EmblaCarousel";
+import { EmblaCarouselDots } from "../components/EmblaCarousel/EmblaCarouselDots";
 import { EmblaSlide } from "../components/EmblaCarousel/EmblaSlide";
 
 import { CardSection } from "../components/Card/CardSection";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="bg-black">
       <div className="border-b border-grurp-800">
-        <EmblaCarousel>
+        <EmblaCarouselDots>
           <EmblaSlide
             responsive
             imgSrc="/images/games/fear-factory/hero/01.jpg"
@@ -25,13 +25,13 @@ export default function Home() {
                   Scare, terrify and thrill guests as you build the haunted
                   attraction of your nightmares.
                 </p>
-                <p>
+                <p className="mt-4">
                   Build and design elaborate attractions with incredible detail
                   to scare your guests enough to leave before they can reach the
                   exit, or risk losing fear reputation and cash.
                 </p>
                 <Link href="/games/fear-factory">
-                  <button className="w-full py-2 mt-4 font-bold tracking-wide text-orange-600 uppercase transition duration-150 border-2 border-orange-600 rounded-md bg-grurp-800 hover:bg-orange-600 hover:text-white">
+                  <button className="w-full py-2 mt-4 tracking-wide text-white uppercase transition duration-150 bg-orange-600 border border-orange-600 rounded-md hover:bg-grurp-900 hover:border-zinc-700 hover:text-white">
                     More Info
                   </button>
                 </Link>
@@ -72,7 +72,7 @@ export default function Home() {
               </div>
             }
           />
-        </EmblaCarousel>
+        </EmblaCarouselDots>
       </div>
 
       <CardSection />

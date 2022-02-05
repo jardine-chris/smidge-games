@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { getDate } from "../../utils/datetime";
 
 export const CardSection = () => {
-  const allPostsUrl = "https://api.smidgegames.com/wp-json/wp/v2/posts";
+  const allPostsUrl = "https://api.smidgegames.com/wp-json/wp/v2/posts?per_page=4";
   const fetcher = async (url) => await axios.get(url).then((res) => res.data);
   const { data, error } = useSWR(allPostsUrl, fetcher);
   if (error) <p>Loading failed...</p>;

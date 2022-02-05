@@ -25,7 +25,7 @@ export default function Home() {
                   Scare, terrify and thrill guests as you build the haunted
                   attraction of your nightmares.
                 </p>
-                <p>
+                <p className="mt-4">
                   Build and design elaborate attractions with incredible detail
                   to scare your guests enough to leave before they can reach the
                   exit, or risk losing fear reputation and cash.

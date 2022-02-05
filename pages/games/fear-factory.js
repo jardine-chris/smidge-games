@@ -27,7 +27,7 @@ export default function FearFactory({ tweets, roadmapData }) {
   const alphaList = [];
   const betaList = [];
 
-  roadmapData.reduce(function (arr, data) {
+  roadmapData.map(data => {
     if (data.stage == "Pre-Alpha") {
       preAlphaList.push(data);
     } else if (data.stage == "Early Access") {
@@ -40,21 +40,48 @@ export default function FearFactory({ tweets, roadmapData }) {
   });
 
   return (
-    <div>
-      {/* <div className="bg-gradient-to-b from-transparent to-black"> */}
-      <div>
-        {/* Fixed background images. */}
-        <div className={styles.bgImg} />
+    <section className="mb-16">
+      {/* Fixed background images. */}
+      <div className={styles.bgImg} />
+      <section>
         {/* Fear Factory logo. */}
-        <div className="relative w-2/3 py-16 mx-auto md:py-16 xl:w-1/4">
+        <article className="relative w-2/3 py-16 mx-auto md:py-16 xl:w-1/4">
           <Image src={logoImg} />
-        </div>
+        </article>
         {/* Trailer container. */}
-        <div className="m-auto max-w-[52rem]">
+        <article className="m-auto max-w-[52rem]">
           <VideoEmbed
             src="https://www.youtube.com/embed/m0Jcf3LmPRQ"
             title="Fear Factory Announcement Trailer"
           />
+        </article>
+      </section>
+
+      <section className="px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-grurp-600/70 font-montserrat bg-grurp-700/30 backdrop-blur-md">
+        <div className="text-center">
+          <span className="text-4xl text-red-700 font-spooky">
+            scare &bull;
+          </span>{" "}
+          <span className="text-5xl text-red-600 uppercase font-spooky">
+            terrify
+          </span>{" "}
+          <span className="text-3xl text-red-700 font-spooky">
+            &bull; thrill
+          </span>
+        </div>
+        <p className="mt-2 text-center uppercase">
+          Bring the haunted attraction of your nightmares to life!
+        </p>
+        <p className="mt-2">
+          Build and design elaborate attractions with incredible detail to scare
+          your guests enough to leave before they can reach the exit, or risk
+          losing fear reputation and cash.
+        </p>
+      </section>
+
+      <div>
+        <div className={`${styles.carouselBg} relative mt-16`}>
+          <EmblaCarouselGallery />
         </div>
       </div>
 
@@ -107,10 +134,7 @@ export default function FearFactory({ tweets, roadmapData }) {
           />
         </div>
       </section>
-      <div className={`${styles.carouselBg} mt-16`}>
-        <EmblaCarouselGallery />
-      </div>
-    </div>
+    </section>
   );
 }
 

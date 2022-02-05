@@ -47,7 +47,7 @@ export const EmblaCarouselGallery = () => {
   }, [embla, onSelect]);
 
   return (
-    <div className="py-8 bg-green-700/70 backdrop-blur-sm embla">
+    <div className="py-8 bg-green-900/70 backdrop-blur-sm embla">
       <h1 className="px-4 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
         <span className="font-light">In-Game </span>
         <span className="font-black text-orange-600 font-spooky">

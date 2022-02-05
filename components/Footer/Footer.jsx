@@ -60,13 +60,13 @@ export const Footer = () => {
                 action="submit"
               >
                 <input
-                  className="w-full p-2 border-r sm:w-64 sm:flex-end border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
+                  className="w-full p-2 border-r rounded-0 sm:w-64 sm:flex-end border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
                   type="text"
                   name="email"
                   id="email"
                   placeholder="smidge@games.com"
                 />
-                <button className="relative w-8 text-xl transition duration-150 bg-transparent hover:text-white hover:bg-orange-600 shrink">
+                <button className="relative w-8 px-8 text-xl transition duration-150 bg-transparent hover:text-white hover:bg-orange-600 shrink">
                   <MdSend className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
                 </button>
               </form>
@@ -92,6 +92,20 @@ export const Footer = () => {
         <p>Copyright &copy; 2020 Smidge Games &bull; All Rights Reserved</p>
         <p>Website by Keplux Development</p>
       </section>
+      {/* Remove Apple's auto-sleekness feature of rounded corners on form elements. */}
+      <style jsx>
+        {`
+        textarea,
+        input.text,
+        input[type="text"],
+        input[type="button"],
+        input[type="submit"],
+        .input-checkbox {
+        -webkit-appearance: none;
+        border-radius: 0;
+        }
+        `}
+      </style>
     </footer>
   );
 };

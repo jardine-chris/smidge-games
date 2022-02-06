@@ -3,12 +3,17 @@ import { IconButton } from "./IconButton";
 import Link from "next/link";
 import Image from "next/image";
 import { MdMenu, MdLogin } from "react-icons/md";
-
 import { Offcanvas } from "./Offcanvas";
+
+import { useUser } from "@auth0/nextjs-auth0";
 
 import smidgeBrand from "../../public/images/smidge-games-logo/logo-brand.png";
 
 export const Navbar = () => {
+  const { user, error, isLoading } = useUser();
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
   const [offcanvas, setOffcanvas] = useState(false);
 
   function closeMenu() {
@@ -35,12 +40,21 @@ export const Navbar = () => {
           </div>
         </Link>
 
-        <div className="absolute right-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600">
-          <Link href="/register">
-            <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
-              <MdLogin />
-            </button>
-          </Link>
+        <div className="absolute right-0 w-12 h-12 overflow-hidden text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-full border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600">
+        {user && (
+            <Link href="/profile">
+              <button>
+                <img src={user.picture} alt={user.name} />
+              </button>
+            </Link>
+          )}
+          {!user && (
+            <Link href="/register">
+              <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
+                <MdLogin />
+              </button>
+            </Link>
+          )}
         </div>
       </div>
 

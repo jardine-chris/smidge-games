@@ -36,9 +36,11 @@ export const Navbar = () => {
         </Link>
 
         <div className="absolute right-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600">
-          <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
-            <MdLogin />
-          </button>
+          <Link href="/register">
+            <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
+              <MdLogin />
+            </button>
+          </Link>
         </div>
       </div>
 

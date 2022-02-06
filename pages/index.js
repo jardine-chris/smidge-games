@@ -9,9 +9,6 @@ export default function Home() {
 
   return (
     <div className="bg-black">
-      <a className="text-white" href="/api/auth/login">
-        Login
-      </a>
       <a className="text-white" href="/api/auth/logout">
         Logout
       </a>

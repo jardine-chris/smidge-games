@@ -9,6 +9,9 @@ export default function Home() {
 
   return (
     <div className="bg-black">
+      <a className="text-white" href="/api/auth/logout">
+        Logout
+      </a>
       <CardSection />
 
       <div className="px-2 py-16 lg:px-8 2xl:px-16 bg-zinc-800">

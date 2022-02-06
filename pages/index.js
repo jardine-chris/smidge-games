@@ -11,25 +11,25 @@ export default function Home() {
     <div className="bg-black">
       <CardSection />
 
-      <div className="py-16 bg-zinc-800">
-        <h1 className="pb-8 pl-4 text-3xl text-left text-white 2xl:pl-16 font-lato">
+      <div className="px-2 py-16 lg:px-8 2xl:px-16 bg-zinc-800">
+        <h1 className="pb-8 text-3xl text-left text-white font-lato">
           Games
         </h1>
-        <div className="grid grid-cols-1 px-4 gap-x-4 md:grid-cols-2 gap-y-8 2xl:px-16 2xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-4 md:grid-cols-2 gap-y-8 2xl:grid-cols-3">
           <EmblaSlide
             responsive
             imgSrc="/images/games/fear-factory/hero/01.jpg"
             imgAlt="Photo from Fear Factory."
             title="Fear Factory"
             logo="/images/games/fear-factory/logo/logo-transparent.png"
-            highlightColor="rgb(93, 20, 12)"
+            highlightColor="rgb(148, 30, 19)"
           />
           <EmblaSlide
             responsive
             imgSrc="/images/games/treasure-hunt/loading-screens/18.jpg"
             imgAlt="Photo from Treasure Hunt."
             title="Treasure Hunt"
-            highlightColor="rgb(92, 38, 28)"
+            highlightColor="rgb(182, 136, 100)"
             logo="/images/games/treasure-hunt/logo/logo-transparent.png"
           />
           <EmblaSlide

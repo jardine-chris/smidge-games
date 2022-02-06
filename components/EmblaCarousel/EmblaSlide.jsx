@@ -7,8 +7,8 @@ export const EmblaSlide = (props) => {
         <img src={props.logo} alt="" />
       </div>
 
-      <div className="lg:col-span-2 slanted-div-wrapper">
-        <div className="h-full slanted-div" />
+      <div className="relative rounded-xl lg:col-span-2 slanted-div-wrapper">
+        <div className="h-full rounded-xl slanted-div" />
       </div>
       <style jsx>
         {`
@@ -16,20 +16,19 @@ export const EmblaSlide = (props) => {
             background-image: url("${props.imgSrc}");
             background-size: cover;
             background-position: center;
+            transition: 0.25s ease-in-out;
 
             clip-path: polygon(10% 0, 100% 0%, 100% 100%, 20% 100%, 0% 90%);
-            transition: clip-path 0.25s;
           }
+
+          // .main-container:hover .slanted-div::after {
+          //   opacity: 0.5;
+          // }
 
           .slanted-div-wrapper,
           .slanted-div-wrapper:hover {
             filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
           }
-
-          // Move clip-path on hover. Not working with drop-shadow?
-          // .main-container:hover .slanted-div {
-          //   clip-path: polygon(20% 0, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
-          // }
 
           .main-container {
             background: rgb(0, 0, 0);
@@ -38,6 +37,22 @@ export const EmblaSlide = (props) => {
               rgba(0, 0, 0, 1) 10%,
               ${props.highlightColor} 100%
             );
+            background-size: 200%;
+            background-position: left;
+            transition: 0.25s;
+          }
+
+          .main-container:hover {
+            background-position: bottom left;
+            // background: linear-gradient(
+            //   142deg,
+            //   ${props.highlightColor} 10%,
+            //   rgba(0, 0, 0, 1) 100%
+            // );
+          }
+
+          .main-container:hover .slanted-div {
+            filter: brightness(130%);
           }
         `}
       </style>

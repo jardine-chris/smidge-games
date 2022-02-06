@@ -34,11 +34,11 @@ export const CardSection = () => {
   }, []);
 
   return (
-    <div className="main-container">
-      <h1 className="pt-16 pb-8 pl-8 text-3xl text-left text-white font-lato">
-        What's happening?
+    <div className="px-2 lg:px-8 2xl:px-16 main-container">
+      <h1 className="pt-16 pb-4 text-3xl text-left text-white font-lato">
+        Latest News
       </h1>
-      <div className="grid grid-cols-1 px-2 pb-2 gap-y-6 sm:px-8 sm:grid-cols-2 sm:gap-8 2xl:grid-cols-4">
+      <div className="grid grid-cols-1 pb-2 gap-y-6 sm:grid-cols-2 sm:gap-8 2xl:grid-cols-4">
         {postData &&
           postData.map((post) => (
             <Card
@@ -55,11 +55,11 @@ export const CardSection = () => {
             />
           ))}
       </div>
-      <div className="px-2">
+      <div className="mb-2">
         {isFetching && (
           <button
             disabled
-            className="w-full py-2 text-gray-400 rounded bg-zinc-700"
+            className="w-full py-2 text-gray-400 rounded bg-slate-700"
           >
             <ImSpinner9 className="inline text-orange-600 animate-spin" />
           </button>
@@ -72,11 +72,6 @@ export const CardSection = () => {
             >
               <ImArrowDown2 className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
             </button>
-          </div>
-        )}
-        {!isFetching && !hasMore && (
-          <div className="w-full py-2 italic text-center text-gray-600 text">
-            All posts loaded.
           </div>
         )}
       </div>

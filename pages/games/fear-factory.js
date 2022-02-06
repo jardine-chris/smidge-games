@@ -57,15 +57,15 @@ export default function FearFactory({ tweets, roadmapData }) {
         </article>
       </section>
 
-      <section className="px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-zinc-600/70 font-montserrat bg-zinc-700/30 backdrop-blur-md">
+      <section className="relative px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-zinc-600/70 font-montserrat bg-black/70">
         <div className="text-center">
-          <span className="text-4xl text-red-700 font-spooky">
+          <span className="text-xl text-red-700 sm:text-3xl font-spooky">
             scare &bull;
           </span>{" "}
-          <span className="text-5xl text-red-600 uppercase font-spooky">
+          <span className="text-3xl text-red-600 uppercase sm:text-5xl font-spooky">
             terrify
           </span>{" "}
-          <span className="text-3xl text-red-700 font-spooky">
+          <span className="text-xl text-red-700 sm:text-3xl font-spooky">
             &bull; thrill
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function FearFactory({ tweets, roadmapData }) {
       </section>
 
       <div>
-        <div className={`${styles.carouselBg} bg-green-900/70 backdrop-blur-sm relative mt-16`}>
+        <div className={`${styles.carouselBg} bg-green-900/80 relative mt-16`}>
           <h1 className="px-4 pt-8 text-2xl tracking-wide text-white uppercase font-lato xl:pl-64">
             <span className="font-light">In-Game </span>
             <span className="font-black text-orange-600 font-spooky">

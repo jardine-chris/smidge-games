@@ -100,19 +100,15 @@ export default function FearFactory({ tweets, roadmapData }) {
       {/* Early access roadmap container. */}
       <section className="mt-16">
         {/* Header with background svg. */}
-        <div className="relative">
-          <img
-            className="w-screen h-48"
-            src="/graphics/pointed-container-edge.svg"
-            alt=""
-          />
-          <h1 className="absolute w-full pb-4 text-3xl text-center uppercase -bottom-8 text-zinc-100 font-spooky">
-            Early Access Roadmap
-          </h1>
+        <div className="drop-shadow-[0_-7px_10px_rgba(0,0,0,0.5)]">
+          <div className="w-full h-48 bg-gradient-to-b from-slate-800 via-slate-900 to-black top-spike" />
         </div>
+        <h1 className="w-full text-3xl text-center uppercase bg-black text-zinc-100 font-spooky">
+          Early Access Roadmap
+        </h1>
 
         {/* Stage car section. */}
-        <section className="grid items-start grid-cols-1 px-4 pt-12 bg-black gap-y-6 md:px-8 md:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
+        <section className="grid items-start grid-cols-1 px-4 py-4 bg-black gap-y-6 md:px-8 md:grid-cols-2 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
           <RoadmapCard
             title="Pre-Alpha"
             date="Fall 2021"
@@ -138,14 +134,29 @@ export default function FearFactory({ tweets, roadmapData }) {
             bgPosition="bg-center-bottom"
           />
         </section>
-        <div className="relative rotate-180">
-          <img
-            className="w-screen h-48"
-            src="/graphics/pointed-container-edge.svg"
-            alt=""
-          />
+        <div className="drop-shadow-[0_-7px_10px_rgba(0,0,0,0.5)] rotate-180">
+          <div className="w-full h-48 bg-gradient-to-b from-slate-800 via-slate-900 to-black top-spike" />
         </div>
       </section>
+      <style jsx>
+        {`
+          .top-spike {
+            clip-path: polygon(
+              0 100%,
+              0 0,
+              15% 60%,
+              33% 21%,
+              45% 70%,
+              50% 40%,
+              55% 53%,
+              72% 20%,
+              85% 50%,
+              100% 0,
+              100% 100%
+            );
+          }
+        `}
+      </style>
     </section>
   );
 }

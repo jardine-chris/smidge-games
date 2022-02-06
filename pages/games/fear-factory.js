@@ -1,25 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import useSWR from "swr";
+import axios from "axios";
 
 import { VideoEmbed } from "../../components/VideoEmbed/VideoEmbed";
-import { EmblaCarouselDots } from "../../components/EmblaCarousel/EmblaCarouselDots";
 import { EmblaCarouselGallery } from "../../components/EmblaCarousel/EmblaCarouselGallery";
-
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
+import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
 
 import logoImg from "../../public/images/games/fear-factory/logo/logo-transparent.png";
 
-import {
-  getAllUserTweets,
-  getUserByUsername,
-} from "../../utils/twitter-requests";
-
 import styles from "./fear-factory.module.scss";
-import { RoadmapCard } from "../../components/Card/RoadmapCard/RoadmapCard";
-import { TwitterCarouselSlide } from "../../components/Twitter/TwitterCarouselSlide";
-import axios from "axios";
 
 export default function FearFactory({ tweets, roadmapData }) {
   const preAlphaList = [];

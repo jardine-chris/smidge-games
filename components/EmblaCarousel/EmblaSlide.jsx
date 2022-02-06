@@ -2,7 +2,7 @@ import bgImg from "../../public/images/games/the-ensign/images/01.jpg";
 
 export const EmblaSlide = (props) => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 overflow-hidden shadow-[5px_5px_5px_rgba(0,0,0,0.45)] rounded-xl main-container">
+    <div className="grid grid-cols-2 lg:grid-cols-3 overflow-hidden shadow-[5px_5px_5px_rgba(0,0,0,0.45)] rounded-xl main-container cursor-pointer">
       <div className="w-3/4 py-16 m-auto">
         <img src={props.logo} alt="" />
       </div>

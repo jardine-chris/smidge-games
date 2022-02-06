@@ -55,7 +55,7 @@ export const CardSection = () => {
             />
           ))}
       </div>
-      <div className="mb-2">
+      <div className="pb-16">
         {isFetching && (
           <button
             disabled

@@ -56,11 +56,11 @@ export const Footer = () => {
                 Subscribe for Updates
               </h3>
               <form
-                className="flex mt-2 border border-grurp-600 sm:max-w-[18rem]"
+                className="flex mt-2 border border-zinc-600 sm:max-w-[18rem]"
                 action="submit"
               >
                 <input
-                  className="w-full p-2 border-r rounded-0 sm:w-64 sm:flex-end border-grurp-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-grurp-800 focus:bg-grurp-600 focus:text-white"
+                  className="w-full p-2 border-r rounded-0 sm:w-64 sm:flex-end border-zinc-600 grow placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-800 focus:bg-zinc-600 focus:text-white"
                   type="text"
                   name="email"
                   id="email"
@@ -74,21 +74,21 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center mt-8 text-2xl text-white">
-          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-grurp-600">
+          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-zinc-600">
             <BsTwitter />
           </span>
-          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-grurp-600">
+          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-zinc-600">
             <BsTwitch />
           </span>
-          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-grurp-600">
+          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-zinc-600">
             <FaSteam />
           </span>
-          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-grurp-600">
+          <span className="p-2.5 mx-2 transition duration-150 rounded cursor-pointer hover:bg-zinc-600">
             <FaGooglePlay />
           </span>
         </div>
       </section>
-      <section className="px-6 py-4 text-xs text-center text-gray-400 bg-grurp-800">
+      <section className="px-6 py-4 text-xs text-center text-gray-400 bg-zinc-800">
         <p>Copyright &copy; 2020 Smidge Games &bull; All Rights Reserved</p>
         <p>Website by Keplux Development</p>
       </section>

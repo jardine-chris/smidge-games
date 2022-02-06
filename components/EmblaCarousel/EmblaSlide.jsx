@@ -1,23 +1,61 @@
+import bgImg from "../../public/images/games/the-ensign/images/01.jpg";
+
 export const EmblaSlide = (props) => {
-  const responsiveInner = "grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3";
-  const responsiveImage = "xl:col-span-2";
   return (
-    <div className="embla__slide">
-      <div className={`${props.responsive ? responsiveInner : ""} embla__slide__inner`}>
-        <img
-          className={`${props.responsive ? responsiveImage : ""} object-cover w-full`}
-          src={props.imgSrc}
-          alt={props.imgAlt}
-        />
-        <div className="px-2 pt-4 md:px-8">
-          <h1 className="text-xl font-bold text-white font-lato">
-            {props.title}
-          </h1>
-          <p className="mt-2 font-light leading-relaxed tracking-tight text-gray-400 text-md md:text-base xl:text-lg xl:leading-normal font-montserrat">
-            {props.content}
-          </p>
-        </div>
+    <div className="grid grid-cols-2 lg:grid-cols-3 overflow-hidden shadow-[5px_5px_5px_rgba(0,0,0,0.45)] rounded-xl main-container">
+      <div className="w-3/4 py-16 m-auto">
+        <img src={props.logo} alt="" />
       </div>
+
+      <div className="relative rounded-xl lg:col-span-2 slanted-div-wrapper">
+        <div className="h-full rounded-xl slanted-div" />
+      </div>
+      <style jsx>
+        {`
+          .slanted-div {
+            background-image: url("${props.imgSrc}");
+            background-size: cover;
+            background-position: center;
+            transition: 0.25s ease-in-out;
+
+            clip-path: polygon(10% 0, 100% 0%, 100% 100%, 20% 100%, 0% 90%);
+          }
+
+          // .main-container:hover .slanted-div::after {
+          //   opacity: 0.5;
+          // }
+
+          .slanted-div-wrapper,
+          .slanted-div-wrapper:hover {
+            filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+          }
+
+          .main-container {
+            background: rgb(0, 0, 0);
+            background: linear-gradient(
+              142deg,
+              rgba(0, 0, 0, 1) 10%,
+              ${props.highlightColor} 100%
+            );
+            background-size: 200%;
+            background-position: left;
+            transition: 0.25s;
+          }
+
+          .main-container:hover {
+            background-position: bottom left;
+            // background: linear-gradient(
+            //   142deg,
+            //   ${props.highlightColor} 10%,
+            //   rgba(0, 0, 0, 1) 100%
+            // );
+          }
+
+          .main-container:hover .slanted-div {
+            filter: brightness(130%);
+          }
+        `}
+      </style>
     </div>
   );
 };

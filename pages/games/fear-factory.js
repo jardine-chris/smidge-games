@@ -57,7 +57,7 @@ export default function FearFactory({ tweets, roadmapData }) {
         </article>
       </section>
 
-      <section className="px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-grurp-600/70 font-montserrat bg-grurp-700/30 backdrop-blur-md">
+      <section className="px-4 py-8 m-auto mt-16 text-sm text-gray-400 border rounded lg:w-1/2 border-zinc-600/70 font-montserrat bg-zinc-700/30 backdrop-blur-md">
         <div className="text-center">
           <span className="text-4xl text-red-700 font-spooky">
             scare &bull;
@@ -106,7 +106,7 @@ export default function FearFactory({ tweets, roadmapData }) {
             src="/graphics/pointed-container-edge.svg"
             alt=""
           />
-          <h1 className="absolute w-full pb-4 text-3xl text-center uppercase -bottom-8 text-grurp-100 font-spooky">
+          <h1 className="absolute w-full pb-4 text-3xl text-center uppercase -bottom-8 text-zinc-100 font-spooky">
             Early Access Roadmap
           </h1>
         </div>

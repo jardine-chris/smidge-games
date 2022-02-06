@@ -51,25 +51,27 @@ export const Post = (props) => {
         <h1 className="px-4 py-6 text-2xl text-white uppercase md:py-8 md:text-5xl font-lato">
           {post && post.title.rendered}
         </h1>
-        <Categories className="flex flex-wrap gap-2">
-          {categories &&
-            categories.map((category) => {
-              return <Label key={category.id} name={category.name} />;
-            })}
-        </Categories>
+        <div className="mb-12">
+          <Categories className="flex flex-wrap gap-2">
+            {categories &&
+              categories.map((category) => {
+                return <Label key={category.id} name={category.name} />;
+              })}
+          </Categories>
+        </div>
         <div className="mb-4 shadow">
           <FeaturedImage
             url={post && post["_links"]["wp:featuredmedia"][0].href}
           />
         </div>
       </header>
-      <section className="mx-2 font-light font-montserrat">
+      <section className="font-light font-montserrat">
         <p className="text-sm text-white">
           By <span className="underline">{author && author.name}</span>
         </p>
         <p className="text-sm text-gray-500">{post && getDate(post)}</p>
         <div
-          className="mt-4 text-lg text-gray-300"
+          className="p-8 mt-8 text-lg text-gray-300/70 bg-zinc-900 rounded-xl"
           dangerouslySetInnerHTML={post && { __html: post.content.rendered }}
         />
       </section>

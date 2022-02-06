@@ -22,12 +22,12 @@ export const RoadmapCard = (props) => {
         <h1 className="text-3xl font-bold text-center text-orange-600 uppercase font-spooky">
           {props.title}
         </h1>
-        <h3 className="m-0 text-sm text-center text-grurp-300 text-light font-montserrat">
+        <h3 className="m-0 text-sm text-center text-zinc-300 text-light font-montserrat">
           {props.date}
         </h3>
       </div>
       <div>
-        <div className="px-2 py-4 m-4 overflow-hidden text-gray-300 border rounded border-grurp-600 bg-grurp-600/40">
+        <div className="px-2 py-4 m-4 overflow-hidden text-gray-300 border rounded border-zinc-600 bg-zinc-600/40">
           <ul className="font-light font-montserrat">
             {props.content.map((item) => {
               const status = getStatus(item.status);

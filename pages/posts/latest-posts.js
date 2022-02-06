@@ -9,9 +9,9 @@ export default function LatestPosts() {
   if (!data) <h1>loading...</h1>;
   return (
     <div>
-      {data.map((post) => {
+      {/* {data.map((post) => {
         return <h1>{post.title.rendered}</h1>;
-      })}
+      })} */}
     </div>
   );
 }

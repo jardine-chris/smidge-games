@@ -15,7 +15,7 @@ export default function Profile() {
           alt={user.name}
         />
         <h1 className="text-2xl text-center">{user.name}</h1>
-        <div class="pt-4 px-8 text-base flex flex-nowrap justify-between">
+        <div className="flex justify-between px-8 pt-4 text-base flex-nowrap">
           <div className="text-center">
             <h1>Comments</h1>
             <p>51</p>

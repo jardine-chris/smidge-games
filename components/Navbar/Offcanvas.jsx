@@ -54,6 +54,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
           <div className="relative h-full">
             <Image
               src="/images/smidge-games-logo/logo-brand.png"
+              alt="Smidge Games logo."
               layout="fill"
               objectFit="contain"
             />
@@ -70,7 +71,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
             if (!data.links) {
               console.log(data);
               return (
-                <Link key={link.text} href={data.url}>
+                <Link key={link.text} href={data.url} passHref>
                   <Menu.Item className={menuItemStyle} onClick={closeOffcanvas}>
                     {data.text}
                   </Menu.Item>
@@ -94,7 +95,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
                     {data.links &&
                       data.links.map((multilink) => {
                         return (
-                          <Link key={multilink.text} href={multilink.url}>
+                          <Link key={multilink.text} href={multilink.url} passHref>
                             <Menu.Item
                               className={`${menuItemStyle}`}
                               onClick={closeOffcanvas}

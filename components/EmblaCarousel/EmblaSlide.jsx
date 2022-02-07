@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const EmblaSlide = (props) => {
   return (
-    <Link href={props.url}>
+    <Link href={props.url} passHref>
       <div className="grid grid-cols-2 lg:grid-cols-3 overflow-hidden shadow-[5px_5px_5px_rgba(0,0,0,0.45)] rounded-xl main-container cursor-pointer">
         <div className="w-3/4 py-16 m-auto">
           <img src={props.logo} alt="" />

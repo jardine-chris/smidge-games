@@ -12,35 +12,32 @@ import smidgeBrand from "../../public/images/smidge-games-logo/logo-brand.png";
 
 export const Navbar = () => {
   const { user, error, isLoading } = useUser();
+  const [userMenu, setUserMenu] = useState(false);
+  const [offcanvas, setOffcanvas] = useState(false);
+
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  const [userMenu, setUserMenu] = useState(false);
   const handleUserClick = () => setUserMenu(!userMenu);
-  const handleMouseLeave = () => setUserMenu(false);
-
-  const [offcanvas, setOffcanvas] = useState(false);
-
-  function closeMenu() {
-    setOffcanvas(false);
-  }
+  const handleMenuClick = () => setOffcanvas(true);
+  const handleOffcanvasClose = () => setOffcanvas(false);
 
   return (
     <nav className="sticky top-0 z-50 h-16 p-2 text-white bg-black border-b-2 border-zinc-800 font-montserrat">
       <div className="relative w-full h-full">
         <div
           className="absolute left-0 w-12 h-12 text-center transition duration-200 ease-in-out -translate-y-1/2 border rounded-md cursor-pointer border-zinc-700 text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600"
-          onClick={() => setOffcanvas(true)}
+          onClick={handleMenuClick}
         >
           <button className="absolute text-3xl -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 material-icons">
             <MdMenu />
           </button>
         </div>
 
-        <Link href="/">
+        <Link href="/" passHref>
           <div className="absolute w-20 h-12 py-1 text-center transition duration-200 ease-in-out -translate-x-1/2 -translate-y-1/2 bg-orange-600 border border-orange-600 rounded-md cursor-pointer left-1/2 hover:border-zinc-700 top-1/2 hover:bg-zinc-900">
             <div className="relative h-full">
-              <Image src={smidgeBrand} layout="fill" objectFit="contain" />
+              <Image src={smidgeBrand} layout="fill" objectFit="contain" alt="Smidge Games logo." />
             </div>
           </div>
         </Link>
@@ -62,7 +59,7 @@ export const Navbar = () => {
             // </Link>
           )}
           {!user && (
-            <Link href="/api/auth/login">
+            <Link href="/api/auth/login" passHref>
               <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
                 <MdLogin />
               </button>
@@ -72,7 +69,7 @@ export const Navbar = () => {
       </div>
 
       {user && userMenu && <UserMenu isShowing={userMenu} />}
-      {offcanvas && <Offcanvas closeOffcanvas={closeMenu} />}
+      {offcanvas && <Offcanvas closeOffcanvas={handleOffcanvasClose()} />}
     </nav>
   );
 };

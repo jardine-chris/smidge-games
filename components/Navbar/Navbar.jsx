@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdMenu, MdLogin } from "react-icons/md";
 import { Offcanvas } from "./Offcanvas";
+import { UserMenu } from "./UserMenu";
 
 import { useUser } from "@auth0/nextjs-auth0";
 
@@ -13,6 +14,10 @@ export const Navbar = () => {
   const { user, error, isLoading } = useUser();
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
+
+  const [userMenu, setUserMenu] = useState(false);
+  const handleUserClick = () => setUserMenu(!userMenu);
+  const handleMouseLeave = () => setUserMenu(false);
 
   const [offcanvas, setOffcanvas] = useState(false);
 
@@ -42,17 +47,19 @@ export const Navbar = () => {
 
         <div
           className={`${
-            !user
-              ? "rounded-md border-zinc-700"
-              : "rounded-full border-0"
+            !user ? "rounded-md border-zinc-700" : "rounded-full border-0"
           } absolute right-0 w-12 h-12 overflow-hidden text-center transition duration-200 hover:brightness-110 ease-in-out -translate-y-1/2 border text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600`}
         >
           {user && (
-            <Link href="/profile">
-              <button>
+            // <Link href="/profile">
+              <button
+                // onMouseEnter={handleMouseEnter}
+                // onMouseLeave={handleMouseLeave}
+                onClick={handleUserClick}
+              >
                 <img src={user.picture} alt={user.name} />
               </button>
-            </Link>
+            // </Link>
           )}
           {!user && (
             <Link href="/api/auth/login">
@@ -64,6 +71,7 @@ export const Navbar = () => {
         </div>
       </div>
 
+      {user && userMenu && <UserMenu isShowing={userMenu} />}
       {offcanvas && <Offcanvas closeOffcanvas={closeMenu} />}
     </nav>
   );

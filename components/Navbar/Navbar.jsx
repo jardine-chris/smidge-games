@@ -44,8 +44,8 @@ export const Navbar = () => {
           className={`${
             !user
               ? "rounded-md border-zinc-700"
-              : "rounded-full border-orange-600 border-2"
-          } absolute right-0 w-12 h-12 overflow-hidden text-center transition duration-200 ease-in-out -translate-y-1/2 border text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600`}
+              : "rounded-full border-0"
+          } absolute right-0 w-12 h-12 overflow-hidden text-center transition duration-200 hover:brightness-110 ease-in-out -translate-y-1/2 border text-zinc-300 top-1/2 hover:bg-zinc-900 hover:text-orange-600`}
         >
           {user && (
             <Link href="/profile">

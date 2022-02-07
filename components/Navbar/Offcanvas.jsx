@@ -72,7 +72,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
               return (
                 <Link key={link.text} href={data.url}>
                   <Menu.Item className={menuItemStyle} onClick={closeOffcanvas}>
-                    <a>{data.text}</a>
+                    {data.text}
                   </Menu.Item>
                 </Link>
               );
@@ -99,7 +99,7 @@ export const Offcanvas = ({ closeOffcanvas }) => {
                               className={`${menuItemStyle}`}
                               onClick={closeOffcanvas}
                             >
-                              <a>{multilink.text}</a>
+                              {multilink.text}
                             </Menu.Item>
                           </Link>
                         );

@@ -5,33 +5,35 @@ import { getDate } from "../../utils/datetime";
 import { ImSpinner9, ImArrowDown2 } from "react-icons/im";
 
 export const CardSection = () => {
-  const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(1);
   const [postData, setPostData] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
   const [hasMore, setHasMore] = useState(true);
 
-  const getPosts = async () => {
-    setIsFetching(true);
-    axios(`https://api.smidgegames.com/wp-json/wp/v2/posts`, {
-      params: {
-        per_page: 4,
-        page: page,
-      },
-    }).then((res) => {
-      console.log(`Headers: ${res.headers["x-wp-total"]}`);
-      setTotalPages(res.headers["X-WP-TotalPages"]);
-      setPostData([...postData, ...res.data]);
-      setPage((prevPage) => prevPage + 1);
-      setHasMore(page < totalPages);
+  useEffect(() => {
+    const getPosts = async () => {
+      setIsFetching(true);
+      if (hasMore) {
+        axios(`https://api.smidgegames.com/wp-json/wp/v2/posts`, {
+          params: {
+            per_page: 4,
+            page: page,
+          },
+        }).then((res) => {
+          setPostData([...postData, ...res.data]);
+          setPage((prevPage) => {
+            if (page < res.headers["x-wp-total"]) {
+              return prevPage + 1;
+            }
+          });
+          setHasMore(page < res.headers["x-wp-total"]);
 
-      setIsFetching(false);
-    });
-  };
-
-  useEffect(async () => {
+          setIsFetching(false);
+        });
+      }
+    };
     getPosts();
-  }, []);
+  }, [page, postData, setPostData, hasMore]);
 
   return (
     <div className="px-2 lg:px-8 2xl:px-16 main-container">

@@ -2,7 +2,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { EmblaSlide } from "../components/EmblaCarousel/EmblaSlide";
 
 import { CardSection } from "../components/Card/CardSection";
-import Link from "next/link";
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });

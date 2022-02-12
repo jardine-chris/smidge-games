@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-export const FloatingInput = ({ type, id, label }) => {
+export const FloatingInput = ({ id, label, children }) => {
   const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState("");
 
   function handleTextChange(text) {
-    setValue(text);
+    stateManager(text);
 
     if (text !== "") {
       setIsActive(true);
@@ -14,19 +13,10 @@ export const FloatingInput = ({ type, id, label }) => {
     }
   }
 
-  const inputBoxStyle =
-    "shadow appearance-none h-12 border border-zinc-700/70 placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-900 focus:border-orange-600 w-full pt-2 pb-3 px-3 text-white leading-tight caret-orange-600 focus:outline-none focus:shadow-outline";
   return (
     <div className="mb-4">
       <div id="float-label">
-        <input
-          id={id}
-          className={inputBoxStyle}
-          type={type}
-          value={value}
-          onChange={(e) => handleTextChange(e.target.value)}
-        />
-
+        {children}
         <label
           className={`${
             isActive ? "Active" : ""

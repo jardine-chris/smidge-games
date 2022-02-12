@@ -1,27 +1,11 @@
 import { FloatingInput } from "../components/Form/FloatingInput";
+import { RegisterForm } from "../components/Form/RegisterForm";
 
 export default function Register() {
   return (
     <div className="background">
       <div className="w-full max-w-lg py-16 mx-auto">
-        <form className="px-4 pt-6 pb-8 mb-4 border rounded shadow-md bg-zinc-800 border-zinc-600/70 font-montserrat">
-          <h1 className="mb-4 font-bold text-white uppercase">
-            Create an Account
-          </h1>
-          <div className="grid grid-cols-2 gap-4">
-            <FloatingInput id="first_name" type="text" label="First Name" />
-            <FloatingInput id="last_name" type="text" label="Last Name" />
-          </div>
-          <FloatingInput id="username" type="text" label="Username" />
-          <FloatingInput id="email" type="email" label="Email" />
-          <FloatingInput id="password" type="password" label="Password" />
-          <div className="grid grid-cols-2">
-            <button className="px-8 py-2 font-bold text-white uppercase bg-black hover:bg-orange-600">
-              Register
-            </button>
-            <h1 className="self-center font-bold text-orange-600 uppercase cursor-pointer hover:text-white justify-self-end">Forgot password?</h1>
-          </div>
-        </form>
+        <RegisterForm />
       </div>
       <style jsx>
         {`

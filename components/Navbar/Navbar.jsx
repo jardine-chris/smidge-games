@@ -1,22 +1,16 @@
 import { useState } from "react";
-import { IconButton } from "./IconButton";
 import Link from "next/link";
 import Image from "next/image";
 import { MdMenu, MdLogin } from "react-icons/md";
 import { Offcanvas } from "./Offcanvas";
 import { UserMenu } from "./UserMenu";
 
-import { useUser } from "@auth0/nextjs-auth0";
-
 import smidgeBrand from "../../public/images/smidge-games-logo/logo-brand.png";
 
 export const Navbar = () => {
-  const { user, error, isLoading } = useUser();
+  const [user, setUser] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
 
   const handleUserClick = () => setUserMenu(!userMenu);
   const handleMenuClick = () => setOffcanvas(true);
@@ -54,12 +48,12 @@ export const Navbar = () => {
                 // onMouseLeave={handleMouseLeave}
                 onClick={handleUserClick}
               >
-                <img src={user.picture} alt={user.name} />
+                
               </button>
             // </Link>
           )}
           {!user && (
-            <Link href="/api/auth/login" passHref>
+            <Link href="/login" passHref>
               <button className="absolute text-3xl translate-x-1/2 -translate-y-1/2 right-1/2 top-1/2 material-icons">
                 <MdLogin />
               </button>

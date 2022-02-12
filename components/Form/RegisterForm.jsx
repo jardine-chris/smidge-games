@@ -10,33 +10,32 @@ export const RegisterForm = () => {
   const [password, setPassword] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
+  axios.interceptors.request.use((request) => {
+    console.log("Starting Request", JSON.stringify(request, null, 2));
+    return request;
+  });
+
+  axios.interceptors.response.use((response) => {
+    console.log("Response:", JSON.stringify(response, null, 2));
+    return response;
+  });
 
   const handleSubmit = async () => {
-    setIsLoading(true);
+    const res = fetch("https://api.smidgegames.com/wp-json/wp/v2/users", {
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        username: username,
+        email: email,
+        password: password,
+      }),
+      headers: {
+        Authorization: `Basic U21pZGdlR2FtZXM6c2J6QyBvT0ZJIDFCa3ogWXVDQyBBcUxDIEZoaW4=`,
+      },
+      method: "POST",
+    });
 
-    const res = await axios
-      .post(
-        "https://api.smidgegames.com/wp-json/wp/v2/users",
-        {
-          first_name: firstName,
-          last_name: lastName,
-          username: username,
-          email: email,
-          password: password,
-        },
-        {
-          headers: {
-            Authorization: `Basic ${process.env.AUTH_BASIC_TOKEN}`,
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        }
-      )
-      .then((res) => {
-        console.log(res.data);
-        setIsLoading(false);
-      })
-      .catch(err => console.log(err));
+    console.log(res && res.json())
   };
 
   const inputBoxStyle =

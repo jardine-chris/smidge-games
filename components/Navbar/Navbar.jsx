@@ -3,16 +3,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdMenu, MdLogin } from "react-icons/md";
 import { Offcanvas } from "./Offcanvas";
-import { UserMenu } from "./UserMenu";
+// import { UserMenu } from "./UserMenu";
 
 import smidgeBrand from "../../public/images/smidge-games-logo/logo-brand.png";
 
 export const Navbar = () => {
   const [user, setUser] = useState(false);
-  const [userMenu, setUserMenu] = useState(false);
+  // const [userMenu, setUserMenu] = useState(false);
   const [offcanvas, setOffcanvas] = useState(false);
 
-  const handleUserClick = () => setUserMenu(!userMenu);
+  // const handleUserClick = () => setUserMenu(!userMenu);
   const handleMenuClick = () => setOffcanvas(true);
   const handleOffcanvasClose = () => setOffcanvas(false);
 
@@ -62,7 +62,7 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {user && userMenu && <UserMenu isShowing={userMenu} />}
+      {/* {user && userMenu && <UserMenu isShowing={userMenu} />} */}
       {offcanvas && <Offcanvas closeOffcanvas={handleOffcanvasClose()} />}
     </nav>
   );

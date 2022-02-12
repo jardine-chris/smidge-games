@@ -5,8 +5,7 @@ export const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-   handleSubmit = (e) => {
-
+   const handleSubmit = (e) => {
     e.preventDefault();
     alert(`"Name: ${user.username}\nPassword: ${user.password}`);
   };

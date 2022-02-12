@@ -8,10 +8,6 @@ export default function Login() {
     password: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`"Name: ${user.username}\nPassword: ${user.password}`);
-  };
   return (
     <div className="background">
       <div className="w-full max-w-lg py-16 mx-auto">

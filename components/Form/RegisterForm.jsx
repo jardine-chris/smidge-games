@@ -21,21 +21,22 @@ export const RegisterForm = () => {
   });
 
   const handleSubmit = async () => {
-    const res = fetch("https://api.smidgegames.com/wp-json/wp/v2/users", {
-      body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
-        username: username,
-        email: email,
-        password: password,
-      }),
+      console.log(email)
+    await axios({
+      method: "POST",
+      url: "https://api.smidgegames.com/?wpwhpro_action=user_registration&action=create_user&wpwhpro_api_key=qcjyxgo3rvan873a73ohpqwuxl7193ts4mrtvu8lcxvblmufrajbjegcrt6hppe7",
+      mode: "no-cors",
       headers: {
         Authorization: `Basic U21pZGdlR2FtZXM6c2J6QyBvT0ZJIDFCa3ogWXVDQyBBcUxDIEZoaW4=`,
       },
-      method: "POST",
+      data: {
+        // first_name: firstName,
+        // last_name: lastName,
+        // user_login: username,
+        user_email: email,
+        // user_pass: password,
+      },
     });
-
-    console.log(res && res.json())
   };
 
   const inputBoxStyle =

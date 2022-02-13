@@ -32,10 +32,10 @@ export default function Register() {
             filter: blur(1px);
             z-index: -1;
             overflow: hidden;
-            -webkit-animation: animate_background 15s linear 0s infinite;
-            -moz-animation: animate_background 15s linear 0s infinite;
-            -o-animation: animate_background 15s linear 0s infinite;
-            animation: animate_background 15s linear 0s infinite;
+            // -webkit-animation: animate_background 15s linear 0s infinite;
+            // -moz-animation: animate_background 15s linear 0s infinite;
+            // -o-animation: animate_background 15s linear 0s infinite;
+            // animation: animate_background 15s linear 0s infinite;
           }
 
           @-webkit-keyframes animate_background { 

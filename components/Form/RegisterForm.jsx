@@ -1,6 +1,8 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { useState } from "react";
 import { FloatingInput } from "./FloatingInput";
+import router from "next/router";
 
 export const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -10,33 +12,23 @@ export const RegisterForm = () => {
   const [password, setPassword] = useState("");
 
   const [isLoading, setIsLoading] = useState(false);
-  axios.interceptors.request.use((request) => {
-    console.log("Starting Request", JSON.stringify(request, null, 2));
-    return request;
-  });
 
-  axios.interceptors.response.use((response) => {
-    console.log("Response:", JSON.stringify(response, null, 2));
-    return response;
-  });
-
-  const handleSubmit = async () => {
-      console.log(email)
-    await axios({
-      method: "POST",
-      url: "https://api.smidgegames.com/?wpwhpro_action=user_registration&action=create_user&wpwhpro_api_key=qcjyxgo3rvan873a73ohpqwuxl7193ts4mrtvu8lcxvblmufrajbjegcrt6hppe7",
-      mode: "no-cors",
-      headers: {
-        Authorization: `Basic U21pZGdlR2FtZXM6c2J6QyBvT0ZJIDFCa3ogWXVDQyBBcUxDIEZoaW4=`,
-      },
-      data: {
-        // first_name: firstName,
-        // last_name: lastName,
-        // user_login: username,
-        user_email: email,
-        // user_pass: password,
-      },
-    });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    await fetch(
+      `https://api.smidgegames.com/?rest_route=/simple-jwt-login/v1/users&email=${email}&password=${password}&user_login=${username}&first_name=${firstName}&last_name=${lastName}&AUTH_KEY=${process.env.NEXT_PUBLIC_JWT_LOGIN_AUTH_KEY}`,
+      {
+        method: "POST",
+      }
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        router.push("/");
+        setIsLoading(false);
+      });
+      
   };
 
   const inputBoxStyle =

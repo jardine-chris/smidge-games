@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { FloatingInput } from "./FloatingInput";
+import Link from "next/link";
 
 export const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-   const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     alert(`"Name: ${user.username}\nPassword: ${user.password}`);
   };
@@ -32,8 +33,10 @@ export const LoginForm = () => {
           />
         </FloatingInput>
         <div className="grid grid-cols-2">
-          <button className="px-8 py-2 font-bold text-white uppercase bg-black hover:bg-orange-600"
-          onSubmit={handleSubmit}>
+          <button
+            className="px-8 py-2 font-bold text-white uppercase bg-black hover:bg-orange-600"
+            onSubmit={handleSubmit}
+          >
             Submit
           </button>
           <h1 className="self-center font-bold text-orange-600 uppercase cursor-pointer hover:text-white justify-self-end">
@@ -41,6 +44,14 @@ export const LoginForm = () => {
           </h1>
         </div>
       </form>
+      <div className="px-4 py-6 text-center text-white border rounded shadow-md bg-zinc-800 border-zinc-600/70 font-montserrat">
+        <h1 className="mb-4">Don&apos;t have an account?</h1>
+        <Link href="/register" passHref>
+          <button className="w-full py-2 font-bold text-white uppercase bg-black hover:bg-orange-600">
+            Register Now
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

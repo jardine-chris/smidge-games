@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FloatingInput } from "./FloatingInput";
 import Link from "next/link";
+import router from "next/router";
 
 export const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +22,13 @@ export const LoginForm = () => {
       .then((res) => {
         const jwt = res.data.jwt;
         if (jwt) {
-          fetch(`https://api.smidgegames.com/?rest_route=/simple-jwt-login/v1/autologin&JWT=${jwt}`)
+          fetch(
+            `https://api.smidgegames.com/?rest_route=/simple-jwt-login/v1/autologin&JWT=${jwt}`
+          ).then((res) => {
+            console.log(res);
+            console.log(jwt);
+            router.push("/");
+          });
         }
       });
   };

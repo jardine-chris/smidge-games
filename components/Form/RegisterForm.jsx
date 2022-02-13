@@ -32,7 +32,7 @@ export const RegisterForm = () => {
   };
 
   const inputBoxStyle =
-    "shadow appearance-none h-12 border border-zinc-700/70 placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-900 focus:border-orange-600 w-full pt-2 pb-3 px-3 text-white leading-tight caret-orange-600 focus:outline-none focus:shadow-outline";
+    "shadow appearance-none pt-6 h-12 border border-zinc-700/70 placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-900 focus:border-orange-600 w-full pb-3 px-3 text-white text-sm leading-tight caret-orange-600 focus:outline-none focus:shadow-outline";
   return (
     <div className="w-full max-w-lg py-16 mx-auto">
       <form
@@ -43,7 +43,7 @@ export const RegisterForm = () => {
           Create an Account
         </h1>
         <div className="grid grid-cols-2 gap-4">
-          <FloatingInput label="First Name">
+          <FloatingInput label="First Name" inputText={firstName}>
             <input
               id="first_name"
               className={inputBoxStyle}
@@ -52,7 +52,7 @@ export const RegisterForm = () => {
               onChange={(e) => setFirstName(e.target.value)}
             />
           </FloatingInput>
-          <FloatingInput label="Last Name">
+          <FloatingInput label="Last Name" inputText={lastName}>
             <input
               id="last_name"
               className={inputBoxStyle}
@@ -62,7 +62,7 @@ export const RegisterForm = () => {
             />
           </FloatingInput>
         </div>
-        <FloatingInput label="Username">
+        <FloatingInput label="Username" inputText={username}>
           <input
             id="username"
             className={inputBoxStyle}
@@ -71,7 +71,7 @@ export const RegisterForm = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </FloatingInput>
-        <FloatingInput label="Email">
+        <FloatingInput label="Email" inputText={email}>
           <input
             id="email"
             className={inputBoxStyle}
@@ -80,7 +80,7 @@ export const RegisterForm = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </FloatingInput>
-        <FloatingInput label="Password">
+        <FloatingInput label="Password" inputText={password}>
           <input
             id="password"
             className={inputBoxStyle}

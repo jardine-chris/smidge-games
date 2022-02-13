@@ -1,17 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export const FloatingInput = ({ id, label, children }) => {
+export const FloatingInput = ({ id, label, children, inputText }) => {
   const [isActive, setIsActive] = useState(false);
 
-  function handleTextChange(text) {
-    stateManager(text);
-
-    if (text !== "") {
+  useEffect(() => {
+    if (inputText !== "") {
       setIsActive(true);
     } else {
       setIsActive(false);
     }
-  }
+  }, [inputText, setIsActive])
 
   return (
     <div className="mb-4">
@@ -47,7 +45,7 @@ export const FloatingInput = ({ id, label, children }) => {
 
             #float-label:focus-within label {
               transform: translate(0, -2.5rem) scale(0.75);
-              color: white;
+              color: #ea580c;
             }
 
             #float-label .Active {

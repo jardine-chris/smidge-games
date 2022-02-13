@@ -11,12 +11,12 @@ export const LoginForm = () => {
     alert(`"Name: ${user.username}\nPassword: ${user.password}`);
   };
   const inputBoxStyle =
-    "shadow appearance-none h-12 border border-zinc-700/70 placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-900 focus:border-orange-600 w-full pt-2 pb-3 px-3 text-white leading-tight caret-orange-600 focus:outline-none focus:shadow-outline";
+    "shadow appearance-none pt-6 h-12 border border-zinc-700/70 placeholder:text-gray-500 focus:placeholder:text-gray-400 bg-zinc-900 focus:border-orange-600 w-full pb-3 px-3 text-white text-sm leading-tight caret-orange-600 focus:outline-none focus:shadow-outline";
   return (
     <div className="w-full max-w-lg py-16 mx-auto">
       <form className="px-4 pt-6 pb-8 mb-4 border rounded shadow-md bg-zinc-800 border-zinc-600/70 font-montserrat">
         <h1 className="mb-4 font-bold text-white uppercase">Login</h1>
-        <FloatingInput label="Username">
+        <FloatingInput label="Username" inputText={username}>
           <input
             id="username"
             className={inputBoxStyle}
@@ -24,7 +24,7 @@ export const LoginForm = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </FloatingInput>
-        <FloatingInput label="Password">
+        <FloatingInput label="Password" inputText={password}>
           <input
             id="password"
             className={inputBoxStyle}
